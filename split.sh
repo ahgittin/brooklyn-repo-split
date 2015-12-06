@@ -37,7 +37,7 @@ function new_repo() {
 function cleanup() {
     ( cd new-repos/TEMP-$1 &&
         git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d &&
-        git filter-branch --tag-name-filter cat --commit-filter '/mnt/ramdisk/remove-pointless-commit.rb "$@"' master ${branches} &&
+        git filter-branch --tag-name-filter cat --commit-filter $(basedir)'/remove-pointless-commit.rb "$@"' master ${branches} &&
         git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d &&
         git reflog expire --expire=now --all &&
         git gc --prune=now )
