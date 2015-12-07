@@ -10,7 +10,7 @@ git clone https://github.com/rdowner/brooklyn-repo-split.git
 cd brooklyn-repo-split
 git submodule init
 git submodule update
-./split.sh
+./all.sh
 ```
 
 then look for the results in the `new-repos` folder.
