@@ -1,4 +1,9 @@
 #!/usr/bin/ruby
+#
+# Copied from:
+# https://github.com/kohsuke/git-filter-branch-tools/blob/master/remove-pointless-commit.rb
+#
+
 # Executed like the following to trim off pointless commits (including merge commits)
 # that doesn't change the tree 
 #   git filter-branch -f --commit-filter '~/ws/jenkins/split2/helper.rb "$@"' HEAD
