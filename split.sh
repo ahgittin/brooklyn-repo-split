@@ -67,5 +67,5 @@ new_repo brooklyn-dist
 cleanup brooklyn-dist
 
 new_repo brooklyn-server
-( cd new-repos/TEMP-brooklyn-server && git filter-branch --index-filter "git rm -q -r --cached --ignore-unmatch $( cat ../../{docs,library,ui,dist}-whitelist.txt | tr '\n' ' ' ); done" --tag-name-filter cat --prune-empty master ${branches} )
+( cd new-repos/TEMP-brooklyn-server && git filter-branch --index-filter "git rm -q -r --cached --ignore-unmatch $( cat ../../{docs,library,ui,dist}-whitelist.txt | tr '\n' ' ' )" --tag-name-filter cat --prune-empty master ${branches} )
 cleanup brooklyn-server
