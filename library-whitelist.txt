@@ -1,4 +1,3 @@
-software/base
 software/database
 software/messaging
 software/monitoring
