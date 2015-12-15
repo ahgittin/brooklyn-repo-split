@@ -829,7 +829,6 @@ example/src/main/java/brooklyn/example/BigAppBrooklyn.groovy
 example/src/main/java/brooklyn/example/PretendLocations.groovy
 example/src/main/resources/gemfire/gemfire-myapp.jar
 example/src/main/resources/gemfire/server-conf.xml
-example/src/main/resources/gemfire/springtravel-datamodel.jar
 example/src/main/resources/hello-world.war
 example/src/main/resources/jclouds/id_rsa.private
 example/src/main/resources/jclouds/id_rsa.pub
@@ -915,11 +914,7 @@ examples/simple-messaging-pubsub/.gitignore
 examples/simple-messaging-pubsub/README.txt
 examples/simple-messaging-pubsub/pom.xml
 examples/simple-messaging-pubsub/resources/lib/geronimo-jms_1.1_spec-1.1.1.jar
-examples/simple-messaging-pubsub/resources/lib/guava-11.0.2.jar
 examples/simple-messaging-pubsub/resources/lib/jsr305-1.3.9.jar
-examples/simple-messaging-pubsub/resources/lib/log4j-1.2.14.jar
-examples/simple-messaging-pubsub/resources/lib/qpid-client-0.14.jar
-examples/simple-messaging-pubsub/resources/lib/qpid-common-0.14.jar
 examples/simple-messaging-pubsub/resources/lib/slf4j-api-1.5.11.jar
 examples/simple-messaging-pubsub/resources/lib/slf4j-log4j12-1.5.11.jar
 examples/simple-messaging-pubsub/src/main/config/demo.xml
@@ -943,7 +938,6 @@ examples/simple-messaging-pubsub/src/main/java/org/apache/brooklyn/demo/Publish.
 examples/simple-messaging-pubsub/src/main/java/org/apache/brooklyn/demo/StandaloneQpidBrokerExample.java
 examples/simple-messaging-pubsub/src/main/java/org/apache/brooklyn/demo/Subscribe.java
 examples/simple-messaging-pubsub/src/main/resources/custom-config.xml
-examples/simple-messaging-pubsub/src/main/resources/je-5.0.34.jar
 examples/simple-messaging-pubsub/src/main/resources/log4j.properties
 examples/simple-messaging-pubsub/src/main/resources/logback.xml
 examples/simple-messaging-pubsub/src/main/resources/passwd
@@ -988,8 +982,6 @@ examples/simple-nosql-cluster/src/main/resources/brooklyn/demo/ha-cassandra-clus
 examples/simple-nosql-cluster/src/main/resources/brooklyn/demo/simple-cassandra-cluster.yaml
 examples/simple-nosql-cluster/src/main/resources/brooklyn/demo/wide-area-cassandra-cluster.yaml
 examples/simple-nosql-cluster/src/main/resources/cumulus.yaml
-examples/simple-nosql-cluster/src/main/resources/cumulusrdf-0.6.1-pre.jar
-examples/simple-nosql-cluster/src/main/resources/cumulusrdf.war
 examples/simple-nosql-cluster/src/main/resources/logback.xml
 examples/simple-nosql-cluster/src/main/resources/mongodb.conf
 examples/simple-nosql-cluster/src/main/resources/org/apache/brooklyn/demo/ha-cassandra-cluster.yaml
@@ -1200,8 +1192,6 @@ extra/src/test/resources/hello-world.war
 extra/src/test/resources/logging.properties
 extra/src/test/resources/qpid-config.xml
 extra/src/test/resources/qpid-plugin.jar
-extra/src/test/resources/seam-booking-as6.war
-extra/src/test/resources/seam-booking-as7.war
 extra/src/test/resources/swf-booking-mvc.war
 icons.psd
 launcher/src/main/resources/log4j.properties
@@ -1407,13 +1397,11 @@ sandbox/examples/src/main/java/brooklyn/earlythoughts/BigAppBrooklyn.groovy
 sandbox/examples/src/main/java/brooklyn/earlythoughts/PretendLocations.groovy
 sandbox/examples/src/main/resources/gemfire/gemfire-myapp.jar
 sandbox/examples/src/main/resources/gemfire/server-conf.xml
-sandbox/examples/src/main/resources/gemfire/springtravel-datamodel.jar
 sandbox/examples/src/main/resources/hello-world.war
 sandbox/examples/src/main/resources/jclouds/id_rsa.private
 sandbox/examples/src/main/resources/jclouds/id_rsa.pub
 sandbox/examples/src/main/resources/log4j.properties
 sandbox/examples/src/main/resources/logging.properties
-sandbox/examples/src/main/resources/swf-booking-mvc.war
 sandbox/examples/src/main/scripts/amis.txt
 sandbox/examples/src/main/scripts/create-all-instances.sh
 sandbox/examples/src/main/scripts/create-instance.sh
@@ -3788,14 +3776,11 @@ software/webapp/src/test/resources/brooklyn/entity/webapp/nodejs/nodejs-word-fin
 software/webapp/src/test/resources/hello-world.war
 software/webapp/src/test/resources/org/apache/brooklyn/entity/dns/geoscaling/expectedScript.php
 software/webapp/src/test/resources/org/apache/brooklyn/entity/webapp/nodejs/nodejs-hello-world.yaml
-software/webapp/src/test/resources/seam-booking-as6.war
-software/webapp/src/test/resources/seam-booking-as7.war
 software/webapp/src/test/resources/ssl/certs/localhost/info.txt
 software/webapp/src/test/resources/ssl/certs/localhost/server.crt
 software/webapp/src/test/resources/ssl/certs/localhost/server.csr
 software/webapp/src/test/resources/ssl/certs/localhost/server.key
 software/webapp/src/test/resources/ssl/certs/localhost/server.key.org
-software/webapp/src/test/resources/swf-booking-mvc.war
 usage/archetypes/quickstart/src/brooklyn-sample/src/main/assembly/assembly.xml
 usage/archetypes/quickstart/src/brooklyn-sample/src/main/assembly/files/conf/logback.xml
 usage/archetypes/quickstart/src/brooklyn-sample/src/main/assembly/scripts/start.sh
