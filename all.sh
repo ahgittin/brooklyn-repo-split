@@ -11,23 +11,15 @@ set -e
 
 # now restructure *in the old repo*
 
-./rearrange-incubator.sh
+./1-rearrange-incubator.sh
+# committed to 'reorg' branch which could be pushed
 
-# TODO commit above
+./2-clean-history.sh
+# committed to 'reorg-clean-history' branch which should NOT be pushed
+# it's just the basis for the splitting
 
-# TODO prune incubator history
-# big files
-# quick remove of uncontroversial things
-#git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch com.cloudsoftcorp.monterey.brooklyn gemfire monterey-example' HEAD
-
-
-# TODO update whitelists
-# TODO script doesn't yet take arguments
-# ./make-whitelist.sh incubator-brooklyn/ "brooklyn-server api core" server-whitelist.txt
-# TODO others
+./3-create-full-whitelists.sh
 
 
-# make new repos
-
-# TODO this currently has the contents of the old split.sh, unchanged
-# ./make-new-repos.sh
+# make the new repos, in new-repos/
+./4-make-new-repos.sh

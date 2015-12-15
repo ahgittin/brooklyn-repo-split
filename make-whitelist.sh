@@ -3,9 +3,11 @@
 
 # TODO take inputs, including OUTPUT_FILENAME
 
-export DIRS=bar/
-export REPO=sample/
-export OUTPUT_FILENAME=TODO-all
+if [ -z "$3" ]; then echo "Usage: make-whitelist.sh REPO_DIR DIRS_TO_FOLLOW OUTPUT_FILENAME" ; exit 1 ; fi
+
+export REPO=$1
+export DIRS=$2
+export OUTPUT_FILENAME=$3
 
 # output
 
