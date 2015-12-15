@@ -15,7 +15,7 @@ set -e
 # committed to 'reorg' branch which could be pushed
 
 ./2-clean-history.sh
-# committed to 'reorg-clean-history' branch which should NOT be pushed
+# should affect all branches, but should NOT be pushed
 # it's just the basis for the splitting
 
 ./3-create-full-whitelists.sh

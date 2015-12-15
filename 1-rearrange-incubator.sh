@@ -1,8 +1,9 @@
+#!/usr/bin/env bash
+
+set -x
+set -e
 
 . env.sh
-
-set -e
-set -x
 
 pushd incubator-brooklyn
 
