@@ -1,0 +1,16 @@
+.gitattributes
+.gitignore
+LICENSE
+LICENSE.md
+LICENSE.txt
+NOTICE
+README.md
+brooklyn
+brooklyn/.gitattributes
+brooklyn/.gitignore
+brooklyn/LICENSE
+brooklyn/NOTICE
+brooklyn/README.md
+usage/cli/src/main/license/NOTICE
+usage/cli/src/main/license/files/NOTICE
+usage/dist/LICENSE.txt
