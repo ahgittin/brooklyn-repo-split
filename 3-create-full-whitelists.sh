@@ -11,15 +11,18 @@ done
 
 pushd incubator-brooklyn
 
-git rev-list --objects --all | awk '{print $2}' | sort | uniq > ../all-files-ever.txt
+git log --pretty=format: --name-only --diff-filter=A | sort -u > ../all-files-ever.txt 
 
 popd
 
-cat *-whitelist.full.txt | sort | uniq > all-files-claimed.txt
+cat *-whitelist.full.txt | sort -u > all-files-claimed.txt
 
 # keep only lines in all-files-ever which aren't in all-files-claimed
-grep -v -x -f all-files-claimed.txt all-files-ever.txt > unclaimed-whitelist.txt
+# (comm is a cool command; didn't even know about it; requies things sorted, which they are, and it's fast)
+comm -13 all-files-claimed.txt all-files-ever.txt > unclaimed-files.txt
 
 # put unclaimed files in the server whitelist so we don't lose them
-cat unclaimed-whitelist.txt >> server-whitelist.full.txt
+# keep the server-only files in case useful
+cp server-whitelist.full.txt server-only-whitelist.full.txt
+cat server-only-whitelist.full.txt unclaimed-files.txt | sort -u > server-whitelist.full.txt
 

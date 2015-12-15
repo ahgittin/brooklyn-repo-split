@@ -40,14 +40,14 @@ while [ -s $TODO_REMAINING ] ; do
   touch $TODO_HERE
 
   for x in `cat $TODO_REMAINING` ; do
-    git log --format='%H' --name-status --follow -- $x | awk '{if ($3) print $3; if ($2) print $2;}' | sort | uniq | cat $TODO_HERE - > ${TODO_HERE}2
+    git log --format='%H' --name-status --follow -- $x | awk '{if ($3) print $3; if ($2) print $2;}' | sort -u | cat $TODO_HERE - > ${TODO_HERE}2
     mv ${TODO_HERE}2 ${TODO_HERE}
   done
-  cat ${TODO_HERE} | sort | uniq > ${TODO_HERE}2
+  cat ${TODO_HERE} | sort -u > ${TODO_HERE}2
   mv ${TODO_HERE}2 ${TODO_HERE}
 
   diff --new-line-format="" --unchanged-line-format="" ${TODO_HERE} $OUTPUT > ${TODO_HERE}_new
-  cat $OUTPUT ${TODO_HERE}_new | sort | uniq > ${OUTPUT}2
+  cat $OUTPUT ${TODO_HERE}_new | sort -u > ${OUTPUT}2
   mv ${OUTPUT}2 ${OUTPUT}
   mv ${TODO_HERE}_new $TODO_REMAINING
 
