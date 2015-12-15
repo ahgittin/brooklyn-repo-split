@@ -6,8 +6,9 @@ set -e
 . env.sh
 
 # ensure branches are all checked out
+( cd incubator-brooklyn && git fetch )
 ( cd incubator-brooklyn && for branch in ${branches}; do [ -z "$( git branch --list ${branch} )" ] && git branch --track ${branch} origin/${branch} || true; done )
-( cd incubator-brooklyn && git checkout master )
+( cd incubator-brooklyn && git checkout master && git reset --hard origin/master )
 
 # now restructure *in the old repo*
 
