@@ -13,7 +13,7 @@ function new_repo() {
     git clone incubator-brooklyn $repodir
     ( cd $repodir &&
         for branch in ${branches}; do git branch --track ${branch} origin/${branch}; done &&
-        git remote remove origin &&
+        git remote rm origin &&
         git remote add origin https://github.com/${REPO_ORG}/${REPO_PREFIX}$1.git )
 }
 function cleanup() {
