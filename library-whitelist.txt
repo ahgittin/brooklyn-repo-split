@@ -1,3 +1,9 @@
-software
+software/database
+software/messaging
+software/monitoring
+software/network
+software/nosql
+software/osgi
+software/webapp
 examples
 sandbox
