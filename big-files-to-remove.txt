@@ -1,6 +1,9 @@
 com.cloudsoftcorp.monterey.brooklyn 
+com.cloudsoftcorp.monterey.overpaas
+gemfire-web-api
 gemfire 
 monterey-example
+monterey-integration
 software/webapp/src/test/resources/seam-booking-as6.war 
 software/webapp/src/test/resources/seam-booking-as7.war 
 software/webapp/src/test/resources/swf-booking-mvc.war 

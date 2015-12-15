@@ -6,6 +6,8 @@ usage/logback-includes
 usage/rest-api
 usage/rest-client
 usage/rest-server
+usage/test-framework
+usage/test-support
 usage/camp
 parent
 api
@@ -17,3 +19,6 @@ locations
 usage/launcher
 storage
 karaf
+
+usage/rest
+
