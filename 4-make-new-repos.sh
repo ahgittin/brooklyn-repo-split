@@ -34,13 +34,13 @@ mkdir new-repos
 
 for x in $PROJS ; do
   new_repo brooklyn-$x
-  ( cd new-repos/${REPO_PREFIX}brooklyn-$x && git filter-branch --index-filter "git ls-files | ${basedir}/filter_whitelist.rb ${basedir}/common-whitelist.txt ${basedir}/$x-whitelist.full.txt | xargs -0 git rm -q -r --cached --ignore-unmatch" --tag-name-filter cat --prune-empty master ${branches} )
+  ( cd new-repos/${REPO_PREFIX}brooklyn-$x && git filter-branch --index-filter "git ls-files | ${basedir}/filter_whitelist.rb ${basedir}/common-whitelist.txt ${basedir}/$x-whitelist.full.gen.txt | xargs -0 git rm -q -r --cached --ignore-unmatch" --tag-name-filter cat --prune-empty master ${branches} )
   cleanup brooklyn-$x
   git rm .gitattributes .gitignore README.md NOTICE LICENSE
   git mv brooklyn-$x/{*,.??*} ./
 done
 
 new_repo brooklyn
-( cd new-repos/${REPO_PREFIX}brooklyn && git filter-branch --index-filter "git ls-files | ${basedir}/filter_whitelist.rb ${basedir}/common-whitelist.txt ${basedir}/brooklyn-uber-repo-whitelist.full.txt | xargs -0 git rm -q -r --cached --ignore-unmatch" --tag-name-filter cat --prune-empty master ${branches} )
+( cd new-repos/${REPO_PREFIX}brooklyn && git filter-branch --index-filter "git ls-files | ${basedir}/filter_whitelist.rb ${basedir}/common-whitelist.txt ${basedir}/brooklyn-uber-repo-whitelist.gen.txt | xargs -0 git rm -q -r --cached --ignore-unmatch" --tag-name-filter cat --prune-empty master ${branches} )
 cleanup brooklyn
 
