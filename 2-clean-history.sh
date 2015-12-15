@@ -5,6 +5,7 @@
 # git rev-list --objects --all | sort -k 2 > allfileshas.txt
 
 pushd incubator-brooklyn
+git checkout master
 git branch -D reorg-history-cleaned
 git checkout -b reorg-history-cleaned
 
