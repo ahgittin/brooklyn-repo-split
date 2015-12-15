@@ -40,6 +40,7 @@ while [ -s $TODO_REMAINING ] ; do
   touch $TODO_HERE
 
   for x in `cat $TODO_REMAINING` ; do
+    # NB: this doesn't work with spsces in the filename; we just have a few though and they're manually added
     git log --format='%H' --name-status --follow -- $x | awk '{if ($3) print $3; if ($2) print $2;}' | sort -u | cat $TODO_HERE - > ${TODO_HERE}2
     mv ${TODO_HERE}2 ${TODO_HERE}
   done

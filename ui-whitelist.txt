@@ -1,4 +1,10 @@
 usage/jsgui
 usage/web-console
 web-console
-
+org.overpaas.management.webapp
+usage/web-console/web-app/images/datatables/Sorting icons.psd
+web-console/web-app/images/datatables/Sorting icons.psd
+usage/jsgui/src/main/webapp/assets/images/Sorting icons.ps
+sandbox/jsgui/src/main/resources/assets/images/Sorting icons.psd
+sandbox/jsgui/src/main/webapp/assets/images/Sorting icons.psd
+brooklyn-ui/src/main/webapp/assets/images/Sorting icons.psd

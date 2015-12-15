@@ -21,4 +21,4 @@ storage
 karaf
 
 usage/rest
-
+sandbox/rest/src/main/resources/assets/images/Sorting icons.psd

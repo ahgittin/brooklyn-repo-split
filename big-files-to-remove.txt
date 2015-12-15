@@ -1,5 +1,6 @@
 com.cloudsoftcorp.monterey.brooklyn 
 com.cloudsoftcorp.monterey.overpaas
+org.overpaas.management.webapp/web-app/WEB-INF/classes
 gemfire-web-api
 gemfire 
 monterey-example
@@ -15,4 +16,10 @@ examples/simple-messaging-pubsub/src/main/resources/je-5.0.34.jar
 examples/simple-nosql-cluster/src/main/resources/cumulusrdf-0.6.1-pre.jar 
 examples/simple-nosql-cluster/src/main/resources/cumulusrdf.war 
 sandbox/examples/src/main/resources/gemfire/springtravel-datamodel.jar
+example/src/main/resources/gemfire/springtravel-datamodel.jar
 sandbox/examples/src/main/resources/swf-booking-mvc.war
+extra/brooklyn-test-support-0.1.0-SNAPSHOT.jar
+extra/src/test/resources/seam-booking-as6.war
+extra/src/test/resources/seam-booking-as7.war
+extra/src/test/resources/brooklyn/entity/nosql/gemfire/gemfireLicense.zip
+

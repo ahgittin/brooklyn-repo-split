@@ -1,1 +1,2 @@
 docs
+docs/style/images/version banner.png
