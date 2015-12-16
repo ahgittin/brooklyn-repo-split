@@ -2,4 +2,3 @@ usage/jsgui
 usage/web-console
 web-console
 org.overpaas.management.webapp
-sandbox/mobile-app
