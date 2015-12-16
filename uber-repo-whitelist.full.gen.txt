@@ -2,10 +2,10 @@
 .gitignore
 LICENSE
 LICENSE.md
-LICENSE.txt
 NOTICE
 README.md
-brooklyn
+brooklyn-uber-repo
+brooklyn/
 brooklyn/.gitattributes
 brooklyn/.gitignore
 brooklyn/LICENSE
@@ -13,4 +13,5 @@ brooklyn/NOTICE
 brooklyn/README.md
 usage/cli/src/main/license/NOTICE
 usage/cli/src/main/license/files/NOTICE
-usage/dist/LICENSE.txt
+usage/jsgui/src/main/license/LICENSE
+usage/jsgui/src/main/license/files/LICENSE
