@@ -9064,7 +9064,6 @@ example/src/main/resources/jclouds/id_rsa.private
 example/src/main/resources/jclouds/id_rsa.pub
 example/src/main/resources/log4j.properties
 example/src/main/resources/logging.properties
-example/src/main/resources/swf-booking-mvc.war
 example/src/main/scripts/amis.txt
 example/src/main/scripts/create-all-instances.sh
 example/src/main/scripts/create-instance.sh
@@ -9278,7 +9277,6 @@ examples/simple-web-cluster/src/main/resources/logback.xml
 examples/simple-web-cluster/src/main/resources/org/apache/brooklyn/demo/glossy-3d-blue-web-icon.png
 examples/simple-web-cluster/src/main/resources/org/apache/brooklyn/demo/nodejs-riak-todo.yaml
 examples/simple-web-cluster/src/main/resources/org/apache/brooklyn/demo/nodejs-todo.yaml
-examples/simple-web-cluster/src/main/resources/swf-booking-mvc.war
 examples/simple-web-cluster/src/main/resources/visitors-creation-script.sql
 examples/simple-web-cluster/src/test/java/brooklyn/demo/RebindWebClusterDatabaseExampleAppIntegrationTest.java
 examples/simple-web-cluster/src/test/java/org/apache/brooklyn/demo/RebindWebClusterDatabaseExampleAppIntegrationTest.java
