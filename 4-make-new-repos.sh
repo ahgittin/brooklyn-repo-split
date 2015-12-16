@@ -70,6 +70,7 @@ function commit_repo() {
   git mv $1/{*,.??*} ./
   git add -A
   git commit -m 'move subdir from incubator up a level as it is promoted to its own repo (first non-incubator commit!)'
+  git clean -df
   popd
 }
 
