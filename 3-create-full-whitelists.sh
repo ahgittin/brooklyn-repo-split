@@ -19,6 +19,7 @@ git log --pretty=format: --name-only --diff-filter=A | sort -u > ../all-files-ev
 
 popd
 
+cp server-whitelist.full.gen.txt server-only-whitelist.full.gen.txt
 cat *-whitelist.full.gen.txt | sort -u > all-files-claimed.gen.txt
 
 # keep only lines in all-files-ever which aren't in all-files-claimed
@@ -27,6 +28,5 @@ comm -13 all-files-claimed.gen.txt all-files-ever.gen.txt > unclaimed-files.gen.
 
 # put unclaimed files in the server whitelist so we don't lose them
 # keep the server-only files in case useful
-cp server-whitelist.full.gen.txt server-only-whitelist.full.gen.txt
 cat server-only-whitelist.full.gen.txt unclaimed-files.gen.txt | sort -u > server-whitelist.full.gen.txt
 

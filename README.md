@@ -17,7 +17,7 @@ Then look for the results:
 * in `incubator-brooklyn`, a `reorg` branch which restructures incubator along lines of the new projects
 * in `new-repos`, all the new repos we want to create appropriately carved up including carved up history
 
-Running this script can take a few hours.
+Running this script can take a couple of hours.  You can run parts of it; see below.
 
 
 ## Files
@@ -41,11 +41,15 @@ The files `big-to-small.*` are a script and output of a program which records th
 
 ## Steps
 
-Steps 1 and 2 are done and checked in as branches at https://github.com/ahgittin/incubator-brooklyn .
+Steps 1 and 2 are done and checked in as `reorg*` branches at https://github.com/ahgittin/incubator-brooklyn .
 
-Step 3 has been run and the results checked in here (`*-whitelist.full.txt`)
+Step 3 has been run and the results checked in here (`*-whitelist.full.gen.txt`).
 
 *All steps will need re-run as more changes are pushed to incubator (or any corresponding changes applied to those branches).*
+
+The steps are now pretty quick, with 1 taking <1m, 2 taking 20m, 3 taking 3m, on my box.
+Step 4 takes the longest, about 15m per sub-repo or 1h30m total.
+
 
 ## References
 
