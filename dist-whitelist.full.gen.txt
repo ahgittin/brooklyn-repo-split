@@ -1,7 +1,6 @@
 .gitattributes
 .gitignore
 LICENSE
-LICENSE.md
 LICENSE.txt
 NOTICE
 README.rst

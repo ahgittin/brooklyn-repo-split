@@ -3,6 +3,7 @@
 .settings/org.eclipse.m2e.core.prefs
 COPYRIGHT.md
 DISCLAIMER
+LICENSE.md
 README
 acceptance/pom.xml
 acceptance/prodDb.properties
@@ -82,10 +83,8 @@ example/src/main/java/brooklyn/example/TomcatFabricApp.groovy
 example/src/main/java/brooklyn/example/TomcatFabricGeoApp.groovy
 example/src/main/java/brooklyn/example/TomcatInAwsApp.groovy
 example/src/main/java/brooklyn/example/TomcatServerApp.groovy
-example/src/main/resources/gemfire/springtravel-datamodel.jar
 example/src/main/scripts/run-at-all-instances.sh
 extra/brooklyn-extra.iml
-extra/brooklyn-test-support-0.1.0-SNAPSHOT.jar
 extra/pom.xml
 extra/resources/META-INF/org.sonatype.gossip/config.properties
 extra/resources/hello-world.war
@@ -161,14 +160,10 @@ extra/src/test/java/brooklyn/util/internal/JmxSensorEffectorToolTest.groovy
 extra/src/test/resources/META-INF/org.sonatype.gossip/config.properties
 extra/src/test/resources/brooklyn/entity/nosql/gemfire/eu/cache.xml
 extra/src/test/resources/brooklyn/entity/nosql/gemfire/eu/client-cache.xml
-extra/src/test/resources/brooklyn/entity/nosql/gemfire/gemfireLicense.zip
 extra/src/test/resources/jclouds/id_rsa.private
 extra/src/test/resources/jclouds/id_rsa.pub
 extra/src/test/resources/log4j.properties
 extra/src/test/resources/logging.properties
-extra/src/test/resources/seam-booking-as6.war
-extra/src/test/resources/seam-booking-as7.war
-extra/src/test/resources/swf-booking-mvc.war
 extras/openshift/pom.xml
 extras/openshift/src/main/java/brooklyn/extras/openshift/OpenshiftExpressAccess.groovy
 extras/openshift/src/main/java/brooklyn/extras/openshift/OpenshiftExpressJavaWebAppCluster.groovy
@@ -263,7 +258,6 @@ org.overpaas.core/src/test/java/org/overpaas/util/TimeExtrasTest.groovy
 org.overpaas.core/src/test/java/org/overpaas/web/tomcat/TomcatNodeTest.groovy
 org.overpaas.core/src/test/resources/META-INF/org.sonatype.gossip/config.properties
 org.overpaas.core/thoughts.txt
-org.overpaas.policies.monterey/.project
 org.overpaas.policies/.classpath
 org.overpaas.policies/.gitignore
 org.overpaas.policies/.project

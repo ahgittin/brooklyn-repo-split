@@ -1,7 +1,6 @@
 .gitattributes
 .gitignore
 LICENSE
-LICENSE.md
 NOTICE
 README.md
 brooklyn-uber-repo

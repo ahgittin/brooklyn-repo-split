@@ -1,7 +1,6 @@
 .gitattributes
 .gitignore
 LICENSE
-LICENSE.md
 NOTICE
 acceptance/src/test/java/brooklyn/web/console/test/ActivityTabTest.groovy
 acceptance/src/test/java/brooklyn/web/console/test/EffectorsTabTest.groovy
@@ -890,10 +889,6 @@ examples/portable-cloudfoundry/src/main/resources/logback.xml
 examples/simple-messaging-pubsub/.gitignore
 examples/simple-messaging-pubsub/README.txt
 examples/simple-messaging-pubsub/pom.xml
-examples/simple-messaging-pubsub/resources/lib/geronimo-jms_1.1_spec-1.1.1.jar
-examples/simple-messaging-pubsub/resources/lib/jsr305-1.3.9.jar
-examples/simple-messaging-pubsub/resources/lib/slf4j-api-1.5.11.jar
-examples/simple-messaging-pubsub/resources/lib/slf4j-log4j12-1.5.11.jar
 examples/simple-messaging-pubsub/src/main/config/demo.xml
 examples/simple-messaging-pubsub/src/main/config/example.xml
 examples/simple-messaging-pubsub/src/main/example/bin/broker.sh
