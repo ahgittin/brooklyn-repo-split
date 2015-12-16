@@ -34,13 +34,15 @@ mkdir new-repos
 
 for x in $PROJS ; do
   new_repo brooklyn-$x
-  ( cd new-repos/${REPO_PREFIX}brooklyn-$x && git filter-branch --index-filter "git ls-files | ${basedir}/filter_whitelist.rb ${basedir}/common-whitelist.txt ${basedir}/$x-whitelist.full.gen.txt | xargs -0 git rm -q -r --cached --ignore-unmatch" --tag-name-filter cat --prune-empty master ${branches} )
+  # use -0 and tr so files with spaces are passed as single words
+  # batch by 1000 to avoid xargs insufficient space error
+  ( cd new-repos/${REPO_PREFIX}brooklyn-$x && git filter-branch --index-filter "git ls-files | comm -23 - ${basedir}/$x-whitelist.full.gen.txt | tr '\n' '\0' | xargs -0 -n 1000 git rm -q -r --cached --ignore-unmatch" --tag-name-filter cat --prune-empty master ${branches} )
   cleanup brooklyn-$x
   git rm .gitattributes .gitignore README.md NOTICE LICENSE
   git mv brooklyn-$x/{*,.??*} ./
 done
 
 new_repo brooklyn
-( cd new-repos/${REPO_PREFIX}brooklyn && git filter-branch --index-filter "git ls-files | ${basedir}/filter_whitelist.rb ${basedir}/common-whitelist.txt ${basedir}/brooklyn-uber-repo-whitelist.gen.txt | xargs -0 git rm -q -r --cached --ignore-unmatch" --tag-name-filter cat --prune-empty master ${branches} )
+( cd new-repos/${REPO_PREFIX}brooklyn && git filter-branch --index-filter "git ls-files | comm -23 - ${basedir}/brooklyn-uber-repo-whitelist.gen.txt | tr '\n' '\0' | xargs -0 -n 1000 git rm -q -r --cached --ignore-unmatch" --tag-name-filter cat --prune-empty master ${branches} )
 cleanup brooklyn
 
