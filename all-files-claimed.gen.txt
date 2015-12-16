@@ -10633,7 +10633,6 @@ sandbox/mgmt/src/test/java/org/infinispan/examples/tutorial/clustered/Node1.java
 sandbox/mgmt/src/test/java/org/infinispan/examples/tutorial/clustered/NumNutNode0.java
 sandbox/mgmt/src/test/java/org/infinispan/examples/tutorial/clustered/NumNutNode1.java
 sandbox/mgmt/src/test/java/org/infinispan/examples/tutorial/clustered/util/ClusterValidation.java
-sandbox/mobile-app
 sandbox/mobile-app/pom.xml
 sandbox/mobile-app/src/main/webapp/WEB-INF/web.xml
 sandbox/mobile-app/src/main/webapp/assets/mobile/css/mobile.css
