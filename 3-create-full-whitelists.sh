@@ -5,11 +5,11 @@ set -e
 
 . env.sh
 
-for x in $PROJS ; do
-  ./make-whitelist.sh incubator-brooklyn/ "brooklyn-$x $(cat common-whitelist.txt) $(cat $x-whitelist.txt)" $x-whitelist.full.gen.txt
+for x in $PROJS uber-repo ; do
+  echo brooklyn-$x | cat - $x-whitelist.txt common-whitelist.txt > TMP-whitelist-$x.gen.txt
+  ./make-whitelist.sh incubator-brooklyn/ TMP-whitelist-$x.gen.txt $x-whitelist.full.gen.txt
+  rm TMP-whitelist-$x.gen.txt
 done
-
-./make-whitelist.sh incubator-brooklyn/ "brooklyn $(cat common-whitelist.txt) README.md" brooklyn-uber-repo-whitelist.full.gen.txt
 
 # finally anything which isn't in any full whitelist, put into unclaimed-whitelist.gen.txt
 

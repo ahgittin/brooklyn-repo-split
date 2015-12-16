@@ -1,12 +1,10 @@
 
 # inputs
 
-# TODO take inputs, including OUTPUT_FILENAME
-
-if [ -z "$3" ]; then echo "Usage: make-whitelist.sh REPO_DIR DIRS_TO_FOLLOW OUTPUT_FILENAME" ; exit 1 ; fi
+if [ -z "$3" ]; then echo "Usage: make-whitelist.sh REPO_DIR PATH_PREFIX_FILE OUTPUT_FILENAME" ; exit 1 ; fi
 
 export REPO=$1
-export DIRS=$2
+export PREFIX_FILE=$2
 export OUTPUT_FILENAME=$3
 
 # output
@@ -18,39 +16,60 @@ export OUTPUT=${ORIG_DIR}/${OUTPUT_FILENAME}
 # working
 
 # file/paths we have left to look at, built up for the next cycle on one cycle,
-# starting with the DIRS
+# starting with the PREFIX_FILE
 export TODO_REMAINING=${ORIG_DIR}/TODO-remaining
 
 # file/paths encountered on one cycle
 export TODO_HERE=${ORIG_DIR}/TODO-here
 
-
-rm $OUTPUT
-for x in $DIRS ; do echo $x >> $OUTPUT ; done
+sort -u -o $OUTPUT $PREFIX_FILE
 cp $OUTPUT $TODO_REMAINING
+SAMPLE_PATHS=`head -4 $PREFIX_FILE`" and "`( gshuf $PREFIX_FILE 2> /dev/null || echo "maybe others" ) | head -4`
 
 pushd $REPO > /dev/null
 
-echo scanning $REPO for all files
+echo scanning $REPO for relevant files in history for $OUTPUT_FILENAME starting with `cat $TODO_REMAINING | wc -l` paths including $SAMPLE_PATHS
 
 while [ -s $TODO_REMAINING ] ; do
 
-  echo current scan has `wc $TODO_REMAINING | awk '{print $1}'` paths including `head -1 $TODO_REMAINING`
+  echo current pass has `cat $TODO_REMAINING | wc -l` paths including `( gshuf $TODO_REMAINING 2> /dev/null || cat $TODO_REMAINING ) | head -4`
+
+#  echo PICKED UP for $OUTPUT_FILENAME : >> ${ORIG_DIR}/log
+#  cat $TODO_REMAINING >> ${ORIG_DIR}/log
+
   rm -f $TODO_HERE
-  touch $TODO_HERE
 
-  for x in `cat $TODO_REMAINING` ; do
-    # NB: this doesn't work with spsces in the filename; we just have a few though and they're manually added
-    git log --format='%H' --name-status --follow -- $x | awk '{if ($3) print $3; if ($2) print $2;}' | sort -u | cat $TODO_HERE - > ${TODO_HERE}2
-    mv ${TODO_HERE}2 ${TODO_HERE}
-  done
-  cat ${TODO_HERE} | sort -u > ${TODO_HERE}2
-  mv ${TODO_HERE}2 ${TODO_HERE}
+  echo collecting relevant commits...
+  cat $TODO_REMAINING | xargs -L -n100 git log --format='%H' --diff-filter=A -- >> ${TODO_HERE}_ids
 
-  diff --new-line-format="" --unchanged-line-format="" ${TODO_HERE} $OUTPUT > ${TODO_HERE}_new
-  cat $OUTPUT ${TODO_HERE}_new | sort -u > ${OUTPUT}2
-  mv ${OUTPUT}2 ${OUTPUT}
-  mv ${TODO_HERE}_new $TODO_REMAINING
+  sort -u ${TODO_HERE}_ids -o ${TODO_HERE}_ids
+#  echo IDS | cat - ${TODO_HERE}_ids >> ${ORIG_DIR}/log
+
+  rm -f ${TODO_HERE}_allpaths
+  echo gathering files from `cat ${TODO_HERE}_ids | wc -l` commits...
+  # 50% match is a bit low but better safe than sorry for moves; for copies we go higher
+  cat ${TODO_HERE}_ids | xargs -L -n100 git show -l99999 -M50 -C90 --name-status --format="ID: %H" | grep -v ^ID: | awk -F $'\t' '{ if ($3) print $3"\t"$2; else print $2; }' | sort -u >> ${TODO_HERE}_allpaths
+
+  echo comparing `cat ${TODO_HERE}_allpaths | wc -l` candidate files against paths...
+  cat $TODO_REMAINING | awk '{print $0"\tMATCH_THIS" }' | cat - ${TODO_HERE}_allpaths | sort -u > ${TODO_HERE}_merged
+  cat ${TODO_HERE}_merged | awk -F $'\t' '{ 
+    if ($2=="MATCH_THIS") { 
+      if (!patt || substr($1,0,length(patt))!=patt) { patt=$1; } 
+      if (last1==patt) { print last1; if (last2) print last2; } 
+      last1=""; 
+    } else { 
+      last1=$1; last2=$2; 
+      if (patt && substr(last1,0,length(patt))==patt) { print last1; if (last2) print last2; } 
+    } }' | sort -u -o ${TODO_HERE}
+   # logging for the above, if needed
+#  echo MATCHING for $OUTPUT_FILENAME : >> ${ORIG_DIR}/log
+#  cat ${TODO_HERE}_merged | awk -F $'\t' '{ if ($2=="MATCH_THIS") { if (!patt || substr($1,0,length(patt))!=patt) { patt=$1; } 
+#      if (last1==patt) { print "MATCH LAST on "patt" ADDS "last1" "last2; } last1=""; }
+#    else { last1=$1; last2=$2; if (patt && substr(last1,0,length(patt))==patt) { print "MATCH NEXT on "patt" ADDS "last1" "last2; } } }' >> ${ORIG_DIR}/log
+
+  comm -23 ${TODO_HERE} $OUTPUT > ${TODO_REMAINING}
+  cat $OUTPUT ${TODO_HERE} | sort -u -o ${OUTPUT}
+  rm ${TODO_HERE}_*
 
 done
 
@@ -59,5 +78,5 @@ popd > /dev/null
 rm ${TODO_REMAINING}
 rm ${TODO_HERE}
 
-echo completed scan of $REPO, history has `wc ${OUTPUT} | awk '{print $1}'` files
+echo completed scan of $REPO in $OUTPUT_FILENAME, relevant history has `wc ${OUTPUT} | awk '{print $1}'` files
 

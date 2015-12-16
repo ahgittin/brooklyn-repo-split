@@ -90,5 +90,5 @@ for x in $PROJS ; do
   do_repo_w_whitelist brooklyn-$x $x-whitelist.full.gen.txt
 done
 
-do_repo_w_whitelist brooklyn brooklyn-uber-repo-whitelist.gen.txt
+do_repo_w_whitelist brooklyn uber-repo-whitelist.full.gen.txt
 
