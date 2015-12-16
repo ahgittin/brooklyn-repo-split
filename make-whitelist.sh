@@ -51,21 +51,7 @@ while [ -s $TODO_REMAINING ] ; do
   cat ${TODO_HERE}_ids | xargs -L -n100 git show -l99999 -M50 -C90 --name-status --format="ID: %H" | grep -v ^ID: | awk -F $'\t' '{ if ($3) print $3"\t"$2; else print $2; }' | sort -u >> ${TODO_HERE}_allpaths
 
   echo comparing `cat ${TODO_HERE}_allpaths | wc -l` candidate files against paths...
-  cat $TODO_REMAINING | awk '{print $0"\tMATCH_THIS" }' | cat - ${TODO_HERE}_allpaths | sort -u > ${TODO_HERE}_merged
-  cat ${TODO_HERE}_merged | awk -F $'\t' '{ 
-    if ($2=="MATCH_THIS") { 
-      if (!patt || substr($1,0,length(patt))!=patt) { patt=$1; } 
-      if (last1==patt) { print last1; if (last2) print last2; } 
-      last1=""; 
-    } else { 
-      last1=$1; last2=$2; 
-      if (patt && substr(last1,0,length(patt))==patt) { print last1; if (last2) print last2; } 
-    } }' | sort -u -o ${TODO_HERE}
-   # logging for the above, if needed
-#  echo MATCHING for $OUTPUT_FILENAME : >> ${ORIG_DIR}/log
-#  cat ${TODO_HERE}_merged | awk -F $'\t' '{ if ($2=="MATCH_THIS") { if (!patt || substr($1,0,length(patt))!=patt) { patt=$1; } 
-#      if (last1==patt) { print "MATCH LAST on "patt" ADDS "last1" "last2; } last1=""; }
-#    else { last1=$1; last2=$2; if (patt && substr(last1,0,length(patt))==patt) { print "MATCH NEXT on "patt" ADDS "last1" "last2; } } }' >> ${ORIG_DIR}/log
+  ${ORIG_DIR}/grep-lines-starting.sh ${TODO_REMAINING} ${TODO_HERE}_allpaths | awk -F $'\t' '{print $1; if ($2) print $2;}' | sort -u -o ${TODO_HERE}
 
   comm -23 ${TODO_HERE} $OUTPUT > ${TODO_REMAINING}
   cat $OUTPUT ${TODO_HERE} | sort -u -o ${OUTPUT}
