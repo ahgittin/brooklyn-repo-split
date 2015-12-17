@@ -8,6 +8,7 @@ if [ ! -z "$1" ] ; then SIZE=$1 ; fi
 
 # however this does not show the former names of the blobs so if the same file is in 
 # multiple times this script will show only one instance; apply `git-follow-file` to do that
+# e.g.   git-biggest-files.sh | while read line ; do if [ ! -z "$( echo $line | awk '{print $3}' )" ] ; then echo $( echo $line | awk '{print $2 }' ) $( git-follow-file.sh $( echo $line | awk '{print $3}' )) ; fi ; done
 
 git rev-list --objects --all | sort -k 2 > /tmp/TMP-big-shas.txt
 git gc 2> /tmp/TMP-big-log.txt && git verify-pack -v .git/objects/pack/pack-*.idx | egrep "^\w+ blob\W+[0-9]+ [0-9]+ [0-9]+$" | sort -k 3 -n -r | head -${SIZE} > /tmp/TMP-big-objects.txt
