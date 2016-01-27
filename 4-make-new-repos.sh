@@ -66,7 +66,7 @@ function cleanup_repo() {
 }
 function commit_repo() {
   pushd new-repos/${REPO_PREFIX}$1
-  git rm --ignore-unmatch .gitattributes .gitignore README.md NOTICE LICENSE 
+  git rm --ignore-unmatch .gitattributes .gitignore README.md NOTICE LICENSE pom.xml
   git mv $1/{*,.??*} ./
   git add -A
   git commit -m 'move subdir from incubator up a level as it is promoted to its own repo (first non-incubator commit!)'
