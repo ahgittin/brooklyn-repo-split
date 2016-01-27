@@ -6224,6 +6224,8 @@ core/src/test/resources/server.ks
 demo-support/Demo.jmx
 demo-support/start-jmeter
 doc/git-workflow.svg
+docs/style/deps/underscore-min.js
+docs/style/deps/underscore-min.map
 example/demo.sh
 example/pom.xml
 example/src/main/java/brooklyn/demo/Demo.groovy
@@ -6246,7 +6248,10 @@ example/src/main/java/brooklyn/example/TomcatFabricApp.groovy
 example/src/main/java/brooklyn/example/TomcatFabricGeoApp.groovy
 example/src/main/java/brooklyn/example/TomcatInAwsApp.groovy
 example/src/main/java/brooklyn/example/TomcatServerApp.groovy
+example/src/main/resources/jclouds/id_rsa.private
+example/src/main/resources/jclouds/id_rsa.pub
 example/src/main/scripts/run-at-all-instances.sh
+examples/simple-web-cluster/src/main/resources/visitors-creation-script.sql
 extra/.gitignore
 extra/brooklyn-extra.iml
 extra/pom.xml
@@ -6259,6 +6264,7 @@ extra/src/integration/java/brooklyn/entity/webapp/tomcat/SimulatedITLocation.gro
 extra/src/integration/java/brooklyn/entity/webapp/tomcat/TomcatNodeIntegrationTest.groovy
 extra/src/integration/java/brooklyn/test/TestUtils.groovy
 extra/src/integration/resources/META-INF/org.sonatype.gossip/config.properties
+extra/src/integration/resources/hello-world.war
 extra/src/integration/resources/logging.properties
 extra/src/main/java/brooklyn/enricher/CustomAggregatingEnricher.groovy
 extra/src/main/java/brooklyn/enricher/DeltaEnricher.groovy
@@ -6402,8 +6408,7 @@ extra/src/test/java/brooklyn/util/task/BasicTaskExecution.groovy
 extra/src/test/resources/META-INF/org.sonatype.gossip/config.properties
 extra/src/test/resources/brooklyn/entity/nosql/gemfire/eu/cache.xml
 extra/src/test/resources/brooklyn/entity/nosql/gemfire/eu/client-cache.xml
-extra/src/test/resources/jclouds/id_rsa.private
-extra/src/test/resources/jclouds/id_rsa.pub
+extra/src/test/resources/hello-world.war
 extra/src/test/resources/log4j.properties
 extra/src/test/resources/logging.properties
 extras/openshift/pom.xml
@@ -6442,7 +6447,6 @@ launcher/src/main/java/brooklyn/launcher/Main.java
 launcher/src/main/java/brooklyn/launcher/WebAppRunner.groovy
 launcher/src/main/resources/log4j.properties
 launcher/src/test/java/brooklyn/launcher/WebAppRunnerTest.groovy
-launcher/src/test/resources/hello-world.war
 launcher/start-mgmt-web.sh
 locations
 locations/jclouds/pom.xml
@@ -7197,6 +7201,7 @@ sandbox/camp/src/test/resources/postgresql-chef.yaml
 sandbox/camp/src/test/resources/visitors-creation-script.sql
 sandbox/jsgui/src/test/java/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncher.java
 sandbox/jsgui/src/test/java/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncherTest.java
+sandbox/jsgui/src/test/resources/log4j.properties
 sandbox/rest/pom.xml
 sandbox/rest/src/main/java/brooklyn/rest/BrooklynRestApi.java
 sandbox/rest/src/main/java/brooklyn/rest/api/ApiError.java
@@ -7306,7 +7311,6 @@ sandbox/rest/src/test/resources/fixtures/sensor-summary-list.json
 sandbox/rest/src/test/resources/fixtures/sensor-summary.json
 sandbox/rest/src/test/resources/fixtures/service-state.json
 sandbox/rest/src/test/resources/fixtures/task-summary-list.json
-sandbox/rest/src/test/resources/log4j.properties
 sandbox/rest/src/test/resources/logback-test.xml
 software/base
 software/base/pom.xml
@@ -8306,13 +8310,20 @@ usage/cli/src/test/resources/example-app-entity-location.yaml
 usage/cli/src/test/resources/example-app-no-location.yaml
 usage/cli/src/test/resources/example-app.yaml
 usage/dist/src/main/license/DISCLAIMER
+usage/dist/src/main/license/NOTICE
 usage/dist/src/main/license/files/DISCLAIMER
+usage/jsgui/src/main/license/DISCLAIMER
 usage/jsgui/src/main/license/LICENSE
+usage/jsgui/src/main/license/NOTICE
+usage/jsgui/src/main/license/README.md
+usage/jsgui/src/main/license/files/DISCLAIMER
 usage/jsgui/src/main/license/files/LICENSE
+usage/jsgui/src/main/webapp/LICENSE
 usage/jsgui/src/test/java/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncher.java
 usage/jsgui/src/test/java/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncherTest.java
 usage/jsgui/src/test/java/org/apache/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncher.java
 usage/jsgui/src/test/java/org/apache/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncherTest.java
+usage/jsgui/src/test/license/LICENSE
 usage/jsgui/src/test/license/NOTICE
 usage/launcher
 usage/launcher/.gitignore

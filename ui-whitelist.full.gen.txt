@@ -253,6 +253,7 @@ brooklyn-ui/src/test/javascript/specs/view/entity-sensors-spec.js
 brooklyn-ui/src/test/license/DISCLAIMER
 brooklyn-ui/src/test/license/LICENSE
 brooklyn-ui/src/test/license/NOTICE
+docs/favicon.ico
 org.overpaas.management.webapp
 org.overpaas.management.webapp/.gitignore
 org.overpaas.management.webapp/.project
@@ -368,19 +369,6 @@ sandbox/jsgui/src/main/resources/assets/css/cssninja-tree.css
 sandbox/jsgui/src/main/resources/assets/css/jquery.dataTables.css
 sandbox/jsgui/src/main/resources/assets/css/prettybrook.css
 sandbox/jsgui/src/main/resources/assets/css/screen.css
-sandbox/jsgui/src/main/resources/assets/images/Sorting icons.psd
-sandbox/jsgui/src/main/resources/assets/images/back_disabled.png
-sandbox/jsgui/src/main/resources/assets/images/back_enabled.png
-sandbox/jsgui/src/main/resources/assets/images/back_enabled_hover.png
-sandbox/jsgui/src/main/resources/assets/images/favicon.ico
-sandbox/jsgui/src/main/resources/assets/images/forward_disabled.png
-sandbox/jsgui/src/main/resources/assets/images/forward_enabled.png
-sandbox/jsgui/src/main/resources/assets/images/forward_enabled_hover.png
-sandbox/jsgui/src/main/resources/assets/images/sort_asc.png
-sandbox/jsgui/src/main/resources/assets/images/sort_asc_disabled.png
-sandbox/jsgui/src/main/resources/assets/images/sort_both.png
-sandbox/jsgui/src/main/resources/assets/images/sort_desc.png
-sandbox/jsgui/src/main/resources/assets/images/sort_desc_disabled.png
 sandbox/jsgui/src/main/resources/assets/img/bridge.png
 sandbox/jsgui/src/main/resources/assets/img/brooklyn.png
 sandbox/jsgui/src/main/resources/assets/img/document.png
@@ -388,7 +376,6 @@ sandbox/jsgui/src/main/resources/assets/img/folder-horizontal.png
 sandbox/jsgui/src/main/resources/assets/img/glyphicons-halflings-white.png
 sandbox/jsgui/src/main/resources/assets/img/glyphicons-halflings.png
 sandbox/jsgui/src/main/resources/assets/img/magnifying-glass-right.png
-sandbox/jsgui/src/main/resources/assets/img/magnifying-glass.gif
 sandbox/jsgui/src/main/resources/assets/img/toggle-small-expand.png
 sandbox/jsgui/src/main/resources/assets/img/toggle-small.png
 sandbox/jsgui/src/main/resources/assets/index.html
@@ -476,19 +463,6 @@ sandbox/jsgui/src/main/webapp/assets/css/jquery.dataTables.css
 sandbox/jsgui/src/main/webapp/assets/css/prettybrook.css
 sandbox/jsgui/src/main/webapp/assets/css/screen.css
 sandbox/jsgui/src/main/webapp/assets/css/swagger.css
-sandbox/jsgui/src/main/webapp/assets/images/Sorting icons.psd
-sandbox/jsgui/src/main/webapp/assets/images/back_disabled.png
-sandbox/jsgui/src/main/webapp/assets/images/back_enabled.png
-sandbox/jsgui/src/main/webapp/assets/images/back_enabled_hover.png
-sandbox/jsgui/src/main/webapp/assets/images/favicon.ico
-sandbox/jsgui/src/main/webapp/assets/images/forward_disabled.png
-sandbox/jsgui/src/main/webapp/assets/images/forward_enabled.png
-sandbox/jsgui/src/main/webapp/assets/images/forward_enabled_hover.png
-sandbox/jsgui/src/main/webapp/assets/images/sort_asc.png
-sandbox/jsgui/src/main/webapp/assets/images/sort_asc_disabled.png
-sandbox/jsgui/src/main/webapp/assets/images/sort_both.png
-sandbox/jsgui/src/main/webapp/assets/images/sort_desc.png
-sandbox/jsgui/src/main/webapp/assets/images/sort_desc_disabled.png
 sandbox/jsgui/src/main/webapp/assets/images/throbber.gif
 sandbox/jsgui/src/main/webapp/assets/img/bridge.png
 sandbox/jsgui/src/main/webapp/assets/img/brooklyn.png
@@ -497,7 +471,6 @@ sandbox/jsgui/src/main/webapp/assets/img/folder-horizontal.png
 sandbox/jsgui/src/main/webapp/assets/img/glyphicons-halflings-white.png
 sandbox/jsgui/src/main/webapp/assets/img/glyphicons-halflings.png
 sandbox/jsgui/src/main/webapp/assets/img/magnifying-glass-right.png
-sandbox/jsgui/src/main/webapp/assets/img/magnifying-glass.gif
 sandbox/jsgui/src/main/webapp/assets/img/toggle-small-expand.png
 sandbox/jsgui/src/main/webapp/assets/img/toggle-small.png
 sandbox/jsgui/src/main/webapp/assets/js/config.js
@@ -608,27 +581,14 @@ sandbox/jsgui/src/test/javascript/specs/view/entity-activities-spec.js
 sandbox/jsgui/src/test/javascript/specs/view/entity-details-spec.js
 sandbox/jsgui/src/test/javascript/specs/view/entity-effector-view-spec.js
 sandbox/jsgui/src/test/javascript/specs/view/modal-wizard-spec.js
-sandbox/jsgui/src/test/resources/log4j.properties
 sandbox/jsgui/src/test/resources/logback-test.xml
+sandbox/mobile-app/src/main/webapp/assets/mobile/images/brooklyn-logo.png
 sandbox/rest/src/main/resources/assets/css/bootstrap-responsive.css
 sandbox/rest/src/main/resources/assets/css/bootstrap.css
 sandbox/rest/src/main/resources/assets/css/cssninja-tree.css
 sandbox/rest/src/main/resources/assets/css/jquery.dataTables.css
 sandbox/rest/src/main/resources/assets/css/prettybrook.css
 sandbox/rest/src/main/resources/assets/css/screen.css
-sandbox/rest/src/main/resources/assets/images/Sorting icons.psd
-sandbox/rest/src/main/resources/assets/images/back_disabled.png
-sandbox/rest/src/main/resources/assets/images/back_enabled.png
-sandbox/rest/src/main/resources/assets/images/back_enabled_hover.png
-sandbox/rest/src/main/resources/assets/images/favicon.ico
-sandbox/rest/src/main/resources/assets/images/forward_disabled.png
-sandbox/rest/src/main/resources/assets/images/forward_enabled.png
-sandbox/rest/src/main/resources/assets/images/forward_enabled_hover.png
-sandbox/rest/src/main/resources/assets/images/sort_asc.png
-sandbox/rest/src/main/resources/assets/images/sort_asc_disabled.png
-sandbox/rest/src/main/resources/assets/images/sort_both.png
-sandbox/rest/src/main/resources/assets/images/sort_desc.png
-sandbox/rest/src/main/resources/assets/images/sort_desc_disabled.png
 sandbox/rest/src/main/resources/assets/img/bridge.png
 sandbox/rest/src/main/resources/assets/img/brooklyn.png
 sandbox/rest/src/main/resources/assets/img/document.png
@@ -636,7 +596,6 @@ sandbox/rest/src/main/resources/assets/img/folder-horizontal.png
 sandbox/rest/src/main/resources/assets/img/glyphicons-halflings-white.png
 sandbox/rest/src/main/resources/assets/img/glyphicons-halflings.png
 sandbox/rest/src/main/resources/assets/img/magnifying-glass-right.png
-sandbox/rest/src/main/resources/assets/img/magnifying-glass.gif
 sandbox/rest/src/main/resources/assets/img/toggle-small-expand.png
 sandbox/rest/src/main/resources/assets/img/toggle-small.png
 sandbox/rest/src/main/resources/assets/index.html
@@ -738,8 +697,15 @@ sandbox/rest/src/test/javascript/specs/view/entity-activities-spec.js
 sandbox/rest/src/test/javascript/specs/view/entity-details-spec.js
 sandbox/rest/src/test/javascript/specs/view/entity-effector-view-spec.js
 sandbox/rest/src/test/javascript/specs/view/modal-wizard-spec.js
+sandbox/rest/src/test/resources/log4j.properties
+usage/cli/src/main/license/DISCLAIMER
 usage/cli/src/main/license/NOTICE
-usage/cli/src/main/license/files/NOTICE
+usage/cli/src/main/license/README.md
+usage/cli/src/main/license/files/DISCLAIMER
+usage/cli/src/test/license/LICENSE
+usage/cli/src/test/license/files/DISCLAIMER
+usage/cli/src/test/license/files/LICENSE
+usage/dist/src/main/license/DISCLAIMER
 usage/jsgui
 usage/jsgui/.gitignore
 usage/jsgui/build/gzip-with-redirect.sh

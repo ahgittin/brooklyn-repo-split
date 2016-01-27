@@ -819,6 +819,7 @@ brooklyn-server/camp/camp-brooklyn/src/test/resources/java-web-app-and-db-with-p
 brooklyn-server/camp/camp-brooklyn/src/test/resources/test-app-with-enrichers-slightly-simpler.yaml
 brooklyn-server/camp/camp-brooklyn/src/test/resources/test-tomcat-cluster.yaml
 brooklyn-server/camp/camp-brooklyn/src/test/resources/test-webapp-with-averaging-enricher.yaml
+docs/style/img/bridge-large-no-title.png
 example/.gitignore
 example/brooklyn-jmeter-test-plan.jmx
 example/jboss.sh
@@ -845,8 +846,6 @@ example/src/main/java/brooklyn/example/PretendLocations.groovy
 example/src/main/resources/gemfire/gemfire-myapp.jar
 example/src/main/resources/gemfire/server-conf.xml
 example/src/main/resources/hello-world.war
-example/src/main/resources/jclouds/id_rsa.private
-example/src/main/resources/jclouds/id_rsa.pub
 example/src/main/resources/log4j.properties
 example/src/main/resources/logging.properties
 example/src/main/scripts/amis.txt
@@ -1105,7 +1104,6 @@ examples/webapps/hello-world-webapp/src/main/webapp/index.html
 examples/webapps/hello-world-webapp/src/main/webapp/primes.jsp
 examples/webapps/hello-world-webapp/src/main/webapp/styles/main.css
 examples/webapps/pom.xml
-extra/src/integration/resources/hello-world.war
 extra/src/main/java/brooklyn/entity/database/Database.groovy
 extra/src/main/java/brooklyn/entity/database/derby/DerbyDatabase.groovy
 extra/src/main/java/brooklyn/entity/database/derby/DerbySetup.groovy
@@ -1186,9 +1184,11 @@ extra/src/test/java/brooklyn/entity/webapp/tomcat/TomcatServerTest.groovy
 extra/src/test/java/brooklyn/entity/webapp/tomcat/TomcatSimulator.groovy
 extra/src/test/java/brooklyn/test/AwsLocationTest.groovy
 extra/src/test/resources/brooklyn/entity/dns/geoscaling/expectedScript.php
-extra/src/test/resources/hello-world.war
+extra/src/test/resources/jclouds/id_rsa.private
+extra/src/test/resources/jclouds/id_rsa.pub
 extra/src/test/resources/qpid-config.xml
 extra/src/test/resources/qpid-plugin.jar
+launcher/src/test/resources/hello-world.war
 mgmt/pom.xml
 mgmt/src/main/java/brooklyn/mgmt/federated/BrooklynManagementNode.groovy
 mgmt/src/main/java/brooklyn/mgmt/federated/FederatingManagementContext.groovy
@@ -3773,10 +3773,12 @@ usage/camp/src/test/resources/org/apache/brooklyn/camp/brooklyn/geodns.yaml
 usage/camp/src/test/resources/test-app-with-enrichers-slightly-simpler.yaml
 usage/camp/src/test/resources/test-tomcat-cluster.yaml
 usage/camp/src/test/resources/test-webapp-with-averaging-enricher.yaml
+usage/cli/src/test/license/files/NOTICE
+usage/dist/src/main/license/NOTICE
+usage/jsgui/.gitignore
 usage/jsgui/src/main/license/LICENSE
-usage/jsgui/src/main/license/NOTICE
 usage/jsgui/src/main/license/files/LICENSE
-usage/jsgui/src/main/license/files/NOTICE
+usage/jsgui/src/main/webapp/assets/images/brooklyn-logo.png
 usage/jsgui/src/main/webapp/assets/mobile/css/mobile.css
 usage/jsgui/src/main/webapp/assets/mobile/images/Powered-by-Cloudsoft-AMP-Logo-on-blue.png
 usage/jsgui/src/main/webapp/assets/mobile/images/Powered-by-Cloudsoft-AMP-Logo-on-white.png
@@ -4136,6 +4138,7 @@ usage/jsgui/src/main/webapp/assets/mobile/libs/mcasimir-mobile-angular-ui-be3901
 usage/jsgui/src/main/webapp/index.m.html
 usage/launcher/src/test/resources/couchbase.yaml
 usage/launcher/src/test/resources/pillowfight.yaml
+usage/launcher/src/test/resources/visitors-creation-script.sql
 usage/qa/log-exclusions.txt
 usage/qa/pom.xml
 usage/qa/src/main/java/brooklyn/qa/load/LoadTest.java

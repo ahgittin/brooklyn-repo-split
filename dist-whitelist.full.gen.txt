@@ -140,14 +140,11 @@ usage/archetypes/quickstart/src/main/resources/META-INF/maven/archetype-metadata
 usage/archetypes/quickstart/src/test/resources/projects/integration-test-1/.gitignore
 usage/archetypes/quickstart/src/test/resources/projects/integration-test-1/archetype.properties
 usage/archetypes/quickstart/src/test/resources/projects/integration-test-1/goal.txt
-usage/cli/src/main/license/DISCLAIMER
 usage/cli/src/main/license/NOTICE
-usage/cli/src/main/license/files/DISCLAIMER
-usage/cli/src/main/license/files/NOTICE
 usage/cli/src/test/java/brooklyn/cli/CliIntegrationTest.java
 usage/cli/src/test/java/brooklyn/cli/CliTest.java
+usage/cli/src/test/license/DISCLAIMER
 usage/cli/src/test/license/NOTICE
-usage/cli/src/test/license/files/NOTICE
 usage/dist
 usage/dist/.gitignore
 usage/dist/LICENSE.txt
@@ -226,6 +223,9 @@ usage/downstream-parent
 usage/downstream-parent/pom.xml
 usage/jsgui/src/main/license/LICENSE
 usage/jsgui/src/main/license/files/LICENSE
+usage/jsgui/src/main/license/files/NOTICE
+usage/jsgui/src/test/license/DISCLAIMER
+usage/jsgui/src/test/license/NOTICE
 usage/scripts
 usage/scripts/buildAndTest
 usage/scripts/change-version.sh

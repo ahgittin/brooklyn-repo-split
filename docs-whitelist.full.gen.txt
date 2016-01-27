@@ -1756,9 +1756,13 @@ docs/website/quickstart/images/my-web.png
 docs/website/quickstart/index.md
 docs/website/quickstart/policies-and-catalogs.md
 docs/website/sitemap.md
+examples/webapps/hello-world-webapp/src/main/webapp/images/bridge-large-no-title.png
 sandbox/brooklyn-sandbox-test-framework/README.md
-usage/dist/src/main/license/NOTICE
+usage/cli/src/main/resources/brooklyn/item-lister/statics/style/js/underscore-min.js
+usage/cli/src/main/resources/brooklyn/item-lister/statics/style/js/underscore-min.map
+usage/cli/src/test/license/NOTICE
 usage/dist/src/main/license/files/NOTICE
 usage/jsgui/src/main/license/LICENSE
 usage/jsgui/src/main/license/files/LICENSE
+usage/jsgui/src/main/webapp/favicon.ico
 usage/test-framework/README.md
