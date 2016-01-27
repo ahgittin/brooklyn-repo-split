@@ -12,8 +12,10 @@ set -e
 
 # now restructure *in the old repo*
 
-./1-rearrange-incubator.sh
-# committed to 'reorg' branch which could be pushed
+# use the "reorg" branch when we clean history
+( cd incubator-brooklyn && git pull && git branch -D reorg && git checkout -b reorg )
+# REARRANGE has been done, but if we needed to do it again we could again use this command, which will re-create the above reorg branch
+# ./1-rearrange-incubator.sh
 
 ./2-clean-history.sh
 # should affect all branches, but should NOT be pushed
