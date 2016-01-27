@@ -10,6 +10,7 @@ brooklyn/.gitignore
 brooklyn/LICENSE
 brooklyn/NOTICE
 brooklyn/README.md
+brooklyn/pom.xml
 usage/cli/src/main/license/NOTICE
 usage/cli/src/main/license/files/NOTICE
 usage/jsgui/src/main/license/LICENSE

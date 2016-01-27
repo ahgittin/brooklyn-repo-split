@@ -49,10 +49,14 @@ brooklyn-dist/dist/licensing/licenses/binary/jtidy
 brooklyn-dist/dist/licensing/licenses/binary/jython
 brooklyn-dist/dist/licensing/licenses/binary/metastuff-bsd-style
 brooklyn-dist/dist/licensing/licenses/binary/xpp3_indiana_university
+brooklyn-dist/dist/licensing/licenses/brooklyn-ui/BSD-2-Clause
+brooklyn-dist/dist/licensing/licenses/brooklyn-ui/BSD-3-Clause
+brooklyn-dist/dist/licensing/licenses/brooklyn-ui/MIT
 brooklyn-dist/dist/licensing/licenses/cli/MIT
 brooklyn-dist/dist/licensing/licenses/jsgui/BSD-2-Clause
 brooklyn-dist/dist/licensing/licenses/jsgui/BSD-3-Clause
 brooklyn-dist/dist/licensing/licenses/jsgui/MIT
+brooklyn-dist/dist/licensing/licenses/server-cli/MIT
 brooklyn-dist/dist/licensing/licenses/source/BSD-2-Clause
 brooklyn-dist/dist/licensing/licenses/source/BSD-3-Clause
 brooklyn-dist/dist/licensing/licenses/source/MIT
@@ -62,6 +66,7 @@ brooklyn-dist/dist/licensing/overrides.yaml
 brooklyn-dist/dist/licensing/projects-with-custom-licenses
 brooklyn-dist/dist/pom.xml
 brooklyn-dist/dist/src/main/config/build-distribution.xml
+brooklyn-dist/dist/src/main/dist/README.md
 brooklyn-dist/dist/src/main/dist/bin/.gitattributes
 brooklyn-dist/dist/src/main/dist/bin/brooklyn
 brooklyn-dist/dist/src/main/dist/bin/brooklyn.bat
@@ -74,6 +79,7 @@ brooklyn-dist/dist/src/main/license/files/NOTICE
 brooklyn-dist/dist/src/test/java/org/apache/brooklyn/cli/BaseCliIntegrationTest.java
 brooklyn-dist/dist/src/test/java/org/apache/brooklyn/cli/CliIntegrationTest.java
 brooklyn-dist/downstream-parent/pom.xml
+brooklyn-dist/pom.xml
 brooklyn-dist/release/.gitignore
 brooklyn-dist/release/README.md
 brooklyn-dist/release/Vagrantfile

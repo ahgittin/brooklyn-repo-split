@@ -629,12 +629,15 @@ brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brookl
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/ApplicationsYamlTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/BrooklynYamlTypeInstantiatorTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/ByonLocationsYamlTest.java
+brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/DependentConfigPollingYamlTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/DslAndRebindYamlTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/EmptySoftwareProcessYamlTest.java
+brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/EmptyWindowsProcessYamlTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/EnrichersSlightlySimplerYamlTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/EnrichersYamlTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/EntitiesYamlIntegrationTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/EntitiesYamlTest.java
+brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/ExternalConfigBrooklynPropertiesTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/ExternalConfigYamlTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/JavaWebAppWithDslYamlRebindIntegrationTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/JavaWebAppsIntegrationTest.java
@@ -647,6 +650,7 @@ brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brookl
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/ReferencingYamlTestEntity.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/ReferencingYamlTestEntityImpl.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/ReloadBrooklynPropertiesTest.java
+brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/SimpleTestPojo.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/TestEntityWithInitConfig.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/TestEntityWithInitConfigImpl.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/TestReferencingEnricher.java
@@ -901,6 +905,7 @@ brooklyn-server/core/src/main/java/org/apache/brooklyn/core/feed/Poller.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/internal/ApiObjectsFactoryImpl.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/internal/BrooklynInitialization.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/internal/BrooklynProperties.java
+brooklyn-server/core/src/main/java/org/apache/brooklyn/core/internal/BrooklynPropertiesImpl.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/internal/storage/BrooklynStorage.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/internal/storage/DataGrid.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/internal/storage/DataGridFactory.java
@@ -998,7 +1003,9 @@ brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/internal/Brookl
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/internal/BrooklynObjectManagementMode.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/internal/BrooklynObjectManagerInternal.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/internal/BrooklynShutdownHooks.java
+brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/internal/CampYamlParser.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/internal/CollectionChangeListener.java
+brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/internal/DeferredBrooklynProperties.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/internal/EffectorUtils.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/internal/EntityChangeListener.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/mgmt/internal/EntityManagementSupport.java
@@ -1606,6 +1613,7 @@ brooklyn-server/core/src/test/java/org/apache/brooklyn/feed/http/HttpValueFuncti
 brooklyn-server/core/src/test/java/org/apache/brooklyn/feed/http/JsonFunctionsTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/feed/shell/ShellFeedIntegrationTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/feed/ssh/SshFeedIntegrationTest.java
+brooklyn-server/core/src/test/java/org/apache/brooklyn/feed/ssh/SshFeedTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/feed/ssh/SshValueFunctionsTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/location/byon/ByonLocationResolverTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/location/byon/FixedListMachineProvisioningLocationRebindTest.java
@@ -1752,6 +1760,8 @@ brooklyn-server/launcher/src/test/java/org/apache/brooklyn/launcher/blueprints/A
 brooklyn-server/launcher/src/test/java/org/apache/brooklyn/launcher/blueprints/CouchbaseBlueprintTest.java
 brooklyn-server/launcher/src/test/java/org/apache/brooklyn/launcher/blueprints/MongoDbBlueprintTest.java
 brooklyn-server/launcher/src/test/java/org/apache/brooklyn/launcher/blueprints/Windows7zipBlueprintLiveTest.java
+brooklyn-server/launcher/src/test/java/org/apache/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncher.java
+brooklyn-server/launcher/src/test/java/org/apache/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncherTest.java
 brooklyn-server/launcher/src/test/resources/7zip-catalog.yaml
 brooklyn-server/launcher/src/test/resources/basic-empty-app-and-entity-blueprint.yaml
 brooklyn-server/launcher/src/test/resources/basic-empy-app-blueprint.yaml
@@ -1965,6 +1975,7 @@ brooklyn-server/policy/src/test/java/org/apache/brooklyn/policy/loadbalancing/Mo
 brooklyn-server/policy/src/test/java/org/apache/brooklyn/policy/loadbalancing/MockContainerEntityImpl.java
 brooklyn-server/policy/src/test/java/org/apache/brooklyn/policy/loadbalancing/MockItemEntity.java
 brooklyn-server/policy/src/test/java/org/apache/brooklyn/policy/loadbalancing/MockItemEntityImpl.java
+brooklyn-server/pom.xml
 brooklyn-server/rest/rest-api/pom.xml
 brooklyn-server/rest/rest-api/src/main/java/org/apache/brooklyn/rest/api/AccessApi.java
 brooklyn-server/rest/rest-api/src/main/java/org/apache/brooklyn/rest/api/ActivityApi.java
@@ -2171,10 +2182,13 @@ brooklyn-server/rest/rest-server/src/test/java/org/apache/brooklyn/rest/util/Bro
 brooklyn-server/rest/rest-server/src/test/java/org/apache/brooklyn/rest/util/EntityLocationUtilsTest.java
 brooklyn-server/rest/rest-server/src/test/java/org/apache/brooklyn/rest/util/HaHotStateCheckClassResource.java
 brooklyn-server/rest/rest-server/src/test/java/org/apache/brooklyn/rest/util/HaHotStateCheckResource.java
+brooklyn-server/rest/rest-server/src/test/java/org/apache/brooklyn/rest/util/NoOpRecordingShutdownHandler.java
 brooklyn-server/rest/rest-server/src/test/java/org/apache/brooklyn/rest/util/NullHttpServletRequestProvider.java
 brooklyn-server/rest/rest-server/src/test/java/org/apache/brooklyn/rest/util/NullServletConfigProvider.java
+brooklyn-server/rest/rest-server/src/test/java/org/apache/brooklyn/rest/util/ServerStoppingShutdownHandler.java
 brooklyn-server/rest/rest-server/src/test/java/org/apache/brooklyn/rest/util/TestShutdownHandler.java
 brooklyn-server/rest/rest-server/src/test/java/org/apache/brooklyn/rest/util/json/BrooklynJacksonSerializerTest.java
+brooklyn-server/rest/rest-server/src/test/resources/brooklyn-test-logo.jpg
 brooklyn-server/rest/rest-server/src/test/resources/brooklyn/scanning.catalog.bom
 brooklyn-server/server-cli/README.md
 brooklyn-server/server-cli/pom.xml
@@ -2276,6 +2290,11 @@ brooklyn-server/software/base/src/main/java/org/apache/brooklyn/entity/software/
 brooklyn-server/software/base/src/main/java/org/apache/brooklyn/entity/software/base/EmptySoftwareProcessDriver.java
 brooklyn-server/software/base/src/main/java/org/apache/brooklyn/entity/software/base/EmptySoftwareProcessImpl.java
 brooklyn-server/software/base/src/main/java/org/apache/brooklyn/entity/software/base/EmptySoftwareProcessSshDriver.java
+brooklyn-server/software/base/src/main/java/org/apache/brooklyn/entity/software/base/EmptyWindowsProcess.java
+brooklyn-server/software/base/src/main/java/org/apache/brooklyn/entity/software/base/EmptyWindowsProcessDriver.java
+brooklyn-server/software/base/src/main/java/org/apache/brooklyn/entity/software/base/EmptyWindowsProcessImpl.java
+brooklyn-server/software/base/src/main/java/org/apache/brooklyn/entity/software/base/EmptyWindowsProcessWinRmDriver.java
+brooklyn-server/software/base/src/main/java/org/apache/brooklyn/entity/software/base/InboundPortsUtils.java
 brooklyn-server/software/base/src/main/java/org/apache/brooklyn/entity/software/base/SameServerDriverLifecycleEffectorTasks.java
 brooklyn-server/software/base/src/main/java/org/apache/brooklyn/entity/software/base/SameServerEntity.java
 brooklyn-server/software/base/src/main/java/org/apache/brooklyn/entity/software/base/SameServerEntityImpl.java
@@ -2362,6 +2381,7 @@ brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/
 brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/base/DoNothingSoftwareProcessImpl.java
 brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/base/DoNothingWinRmSoftwareProcessDriver.java
 brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/base/EntitySshToolTest.java
+brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/base/SameServerDriverLifecycleEffectorTasksTest.java
 brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/base/SameServerEntityTest.java
 brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/base/SoftwareEffectorTest.java
 brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/base/SoftwareProcessEntityLatchTest.java
@@ -2384,6 +2404,7 @@ brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/
 brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/base/lifecycle/ScriptHelperUnitTest.java
 brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/base/lifecycle/StartStopSshDriverTest.java
 brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/base/lifecycle/WinRmExecuteHelperUnitTest.java
+brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/base/test/autoscaling/AutoScalerPolicyNoMoreMachinesTest.java
 brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/base/test/core/mgmt/usage/ApplicationUsageTrackingTest.java
 brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/base/test/core/mgmt/usage/LocationUsageTrackingTest.java
 brooklyn-server/software/base/src/test/java/org/apache/brooklyn/entity/software/base/test/core/mgmt/usage/RecordingUsageListener.java
@@ -2420,6 +2441,7 @@ brooklyn-server/software/winrm/src/main/java/org/apache/brooklyn/util/core/inter
 brooklyn-server/software/winrm/src/main/java/org/apache/brooklyn/util/core/internal/winrm/WinRmTool.java
 brooklyn-server/software/winrm/src/main/java/org/apache/brooklyn/util/core/internal/winrm/WinRmToolResponse.java
 brooklyn-server/software/winrm/src/main/java/org/apache/brooklyn/util/core/internal/winrm/pywinrm/Winrm4jTool.java
+brooklyn-server/software/winrm/src/main/java/org/apache/brooklyn/util/core/internal/winrm/winrm4j/Winrm4jTool.java
 brooklyn-server/software/winrm/src/test/java/org/apache/brooklyn/feed/windows/WindowsPerformanceCounterFeedLiveTest.java
 brooklyn-server/software/winrm/src/test/java/org/apache/brooklyn/feed/windows/WindowsPerformanceCounterFeedTest.java
 brooklyn-server/software/winrm/src/test/java/org/apache/brooklyn/location/winrm/AdvertiseWinrmLoginPolicyTest.java
@@ -2436,10 +2458,14 @@ brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/
 brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/BaseTest.java
 brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/InfrastructureDeploymentTestCase.java
 brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/InfrastructureDeploymentTestCaseImpl.java
+brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/LoopOverGroupMembersTestCase.java
+brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/LoopOverGroupMembersTestCaseImpl.java
 brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/ParallelTestCase.java
 brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/ParallelTestCaseImpl.java
 brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/SimpleShellCommandTest.java
 brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/SimpleShellCommandTestImpl.java
+brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/TargetableTestComponent.java
+brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/TargetableTestComponentImpl.java
 brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/TestCase.java
 brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/TestCaseImpl.java
 brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/TestEffector.java
@@ -2449,6 +2475,8 @@ brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/
 brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/TestHttpCallImpl.java
 brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/TestSensor.java
 brooklyn-server/test-framework/src/main/java/org/apache/brooklyn/test/framework/TestSensorImpl.java
+brooklyn-server/test-framework/src/test/java/org/apache/brooklyn/test/framework/InfrastructureDeploymentTestCaseTest.java
+brooklyn-server/test-framework/src/test/java/org/apache/brooklyn/test/framework/LoopOverGroupMembersTestCaseTest.java
 brooklyn-server/test-framework/src/test/java/org/apache/brooklyn/test/framework/SimpleShellCommandIntegrationTest.java
 brooklyn-server/test-framework/src/test/java/org/apache/brooklyn/test/framework/TestEffectorTest.java
 brooklyn-server/test-framework/src/test/java/org/apache/brooklyn/test/framework/TestFrameworkAssertionsTest.java
@@ -2456,6 +2484,8 @@ brooklyn-server/test-framework/src/test/java/org/apache/brooklyn/test/framework/
 brooklyn-server/test-framework/src/test/java/org/apache/brooklyn/test/framework/TestSensorTest.java
 brooklyn-server/test-framework/src/test/java/org/apache/brooklyn/test/framework/entity/TestEntity.java
 brooklyn-server/test-framework/src/test/java/org/apache/brooklyn/test/framework/entity/TestEntityImpl.java
+brooklyn-server/test-framework/src/test/java/org/apache/brooklyn/test/framework/entity/TestInfrastructure.java
+brooklyn-server/test-framework/src/test/java/org/apache/brooklyn/test/framework/entity/TestInfrastructureImpl.java
 brooklyn-server/test-framework/src/test/resources/test-framework-examples/README.md
 brooklyn-server/test-framework/src/test/resources/test-framework-examples/example-catalog-test.bom
 brooklyn-server/test-framework/src/test/resources/test-framework-examples/example-catalog.bom
@@ -2590,6 +2620,7 @@ brooklyn-server/utils/common/src/main/java/org/apache/brooklyn/util/text/StringF
 brooklyn-server/utils/common/src/main/java/org/apache/brooklyn/util/text/StringPredicates.java
 brooklyn-server/utils/common/src/main/java/org/apache/brooklyn/util/text/StringShortener.java
 brooklyn-server/utils/common/src/main/java/org/apache/brooklyn/util/text/Strings.java
+brooklyn-server/utils/common/src/main/java/org/apache/brooklyn/util/text/VersionComparator.java
 brooklyn-server/utils/common/src/main/java/org/apache/brooklyn/util/text/WildcardGlobs.java
 brooklyn-server/utils/common/src/main/java/org/apache/brooklyn/util/time/CountdownTimer.java
 brooklyn-server/utils/common/src/main/java/org/apache/brooklyn/util/time/Duration.java
@@ -2648,6 +2679,7 @@ brooklyn-server/utils/common/src/test/java/org/apache/brooklyn/util/text/StringF
 brooklyn-server/utils/common/src/test/java/org/apache/brooklyn/util/text/StringPredicatesTest.java
 brooklyn-server/utils/common/src/test/java/org/apache/brooklyn/util/text/StringShortenerTest.java
 brooklyn-server/utils/common/src/test/java/org/apache/brooklyn/util/text/StringsTest.java
+brooklyn-server/utils/common/src/test/java/org/apache/brooklyn/util/text/VersionComparatorTest.java
 brooklyn-server/utils/common/src/test/java/org/apache/brooklyn/util/text/WildcardGlobsTest.java
 brooklyn-server/utils/common/src/test/java/org/apache/brooklyn/util/time/CountdownTimerTest.java
 brooklyn-server/utils/common/src/test/java/org/apache/brooklyn/util/time/DurationTest.java
@@ -2725,6 +2757,8 @@ brooklyn-server/utils/test-support/src/main/java/org/apache/brooklyn/test/suppor
 brooklyn-server/utils/test-support/src/main/java/org/apache/brooklyn/test/support/VerboseReporter.java
 brooklyn-server/utils/test-support/src/main/resources/brooklyn/logback-appender-file.xml
 brooklyn-server/utils/test-support/src/main/resources/logback-test.xml
+brooklyn-ui/src/test/java/org/apache/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncher.java
+brooklyn-ui/src/test/java/org/apache/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncherTest.java
 brooklyn.api/pom.xml
 camp
 camp/README.md
@@ -4023,6 +4057,7 @@ core/src/main/java/org/apache/brooklyn/core/internal/ApiObjectsFactoryImpl.java
 core/src/main/java/org/apache/brooklyn/core/internal/BrooklynFeatureEnablement.java
 core/src/main/java/org/apache/brooklyn/core/internal/BrooklynInitialization.java
 core/src/main/java/org/apache/brooklyn/core/internal/BrooklynProperties.java
+core/src/main/java/org/apache/brooklyn/core/internal/BrooklynPropertiesImpl.java
 core/src/main/java/org/apache/brooklyn/core/internal/storage/BrooklynStorage.java
 core/src/main/java/org/apache/brooklyn/core/internal/storage/DataGrid.java
 core/src/main/java/org/apache/brooklyn/core/internal/storage/DataGridFactory.java
@@ -4178,7 +4213,9 @@ core/src/main/java/org/apache/brooklyn/core/mgmt/internal/BrooklynGarbageCollect
 core/src/main/java/org/apache/brooklyn/core/mgmt/internal/BrooklynObjectManagementMode.java
 core/src/main/java/org/apache/brooklyn/core/mgmt/internal/BrooklynObjectManagerInternal.java
 core/src/main/java/org/apache/brooklyn/core/mgmt/internal/BrooklynShutdownHooks.java
+core/src/main/java/org/apache/brooklyn/core/mgmt/internal/CampYamlParser.java
 core/src/main/java/org/apache/brooklyn/core/mgmt/internal/CollectionChangeListener.java
+core/src/main/java/org/apache/brooklyn/core/mgmt/internal/DeferredBrooklynProperties.java
 core/src/main/java/org/apache/brooklyn/core/mgmt/internal/EffectorUtils.java
 core/src/main/java/org/apache/brooklyn/core/mgmt/internal/EntityChangeListener.java
 core/src/main/java/org/apache/brooklyn/core/mgmt/internal/EntityManagementSupport.java
@@ -5483,6 +5520,7 @@ core/src/test/java/org/apache/brooklyn/core/entity/DynamicEntityTypeConfigTest.j
 core/src/test/java/org/apache/brooklyn/core/entity/EntitiesTest.java
 core/src/test/java/org/apache/brooklyn/core/entity/EntityAssertsTest.java
 core/src/test/java/org/apache/brooklyn/core/entity/EntityAutomanagedTest.java
+core/src/test/java/org/apache/brooklyn/core/entity/EntityConcurrencyTest.java
 core/src/test/java/org/apache/brooklyn/core/entity/EntityConfigTest.java
 core/src/test/java/org/apache/brooklyn/core/entity/EntityFunctionsTest.java
 core/src/test/java/org/apache/brooklyn/core/entity/EntityLocationsTest.java
@@ -5722,6 +5760,7 @@ core/src/test/java/org/apache/brooklyn/core/test/qa/performance/GroovyYardStickP
 core/src/test/java/org/apache/brooklyn/core/test/qa/performance/JavaYardStickPerformanceTest.java
 core/src/test/java/org/apache/brooklyn/core/test/qa/performance/SubscriptionPerformanceTest.java
 core/src/test/java/org/apache/brooklyn/core/test/qa/performance/TaskPerformanceTest.java
+core/src/test/java/org/apache/brooklyn/core/typereg/BasicBrooklynTypeRegistryTest.java
 core/src/test/java/org/apache/brooklyn/core/typereg/ExampleXmlTypePlanTransformer.java
 core/src/test/java/org/apache/brooklyn/core/typereg/ExampleXmlTypePlanTransformerTest.java
 core/src/test/java/org/apache/brooklyn/core/typereg/JavaClassNameTypePlanTransformerTest.java
@@ -6511,6 +6550,12 @@ locations/jclouds/src/test/java/org/apache/brooklyn/policy/jclouds/os/CreateUser
 locations/jclouds/src/test/resources/brooklyn/location/jclouds/jclouds-location-test-various-login-credentials.yaml
 locations/jclouds/src/test/resources/brooklyn/location/jclouds/various-login-credentials.yaml
 locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/jclouds-location-test-various-login-credentials.yaml
+locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-aws-machine-aKEcbxKN
+locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-aws-parent-lCYB3mTb
+locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-aws-winrm-machine-KYSryzW8
+locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-aws-winrm-parent-fKc0Ofyn
+locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-azure-machine-VNapYjwp
+locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-azure-parent-briByOel
 org.overpaas.core/src/main/java/brooklyn/entity/Application.groovy
 org.overpaas.core/src/main/java/brooklyn/entity/DynamicGroup.groovy
 org.overpaas.core/src/main/java/brooklyn/entity/Entity.groovy
@@ -6840,6 +6885,8 @@ sandbox/camp/src/test/resources/opengamma-cluster.yaml
 sandbox/camp/src/test/resources/playing.yaml
 sandbox/camp/src/test/resources/postgresql-chef.yaml
 sandbox/camp/src/test/resources/visitors-creation-script.sql
+sandbox/jsgui/src/test/java/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncher.java
+sandbox/jsgui/src/test/java/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncherTest.java
 sandbox/rest/pom.xml
 sandbox/rest/src/main/java/brooklyn/rest/BrooklynRestApi.java
 sandbox/rest/src/main/java/brooklyn/rest/api/ApiError.java
@@ -7691,7 +7738,9 @@ usage/camp/src/test/java/org/apache/brooklyn/camp/brooklyn/EnrichersSlightlySimp
 usage/camp/src/test/java/org/apache/brooklyn/camp/brooklyn/EnrichersYamlTest.java
 usage/camp/src/test/java/org/apache/brooklyn/camp/brooklyn/EntitiesYamlIntegrationTest.java
 usage/camp/src/test/java/org/apache/brooklyn/camp/brooklyn/EntitiesYamlTest.java
+usage/camp/src/test/java/org/apache/brooklyn/camp/brooklyn/ExternalConfigBrooklynPropertiesTest.java
 usage/camp/src/test/java/org/apache/brooklyn/camp/brooklyn/ExternalConfigYamlTest.java
+usage/camp/src/test/java/org/apache/brooklyn/camp/brooklyn/GeoDnsServiceYamlTest.java
 usage/camp/src/test/java/org/apache/brooklyn/camp/brooklyn/JavaWebAppWithDslYamlRebindIntegrationTest.java
 usage/camp/src/test/java/org/apache/brooklyn/camp/brooklyn/JavaWebAppsIntegrationTest.java
 usage/camp/src/test/java/org/apache/brooklyn/camp/brooklyn/JavaWebAppsMatchingTest.java
@@ -7765,6 +7814,7 @@ usage/camp/src/test/resources/org/apache/brooklyn/camp/brooklyn/exit0.bat
 usage/camp/src/test/resources/org/apache/brooklyn/camp/brooklyn/exit0.ps1
 usage/camp/src/test/resources/org/apache/brooklyn/camp/brooklyn/exit1.bat
 usage/camp/src/test/resources/org/apache/brooklyn/camp/brooklyn/exit1.ps1
+usage/camp/src/test/resources/org/apache/brooklyn/camp/brooklyn/geodns.yaml
 usage/camp/src/test/resources/org/apache/brooklyn/camp/brooklyn/test/lite/test-app-service-blueprint.yaml
 usage/camp/src/test/resources/osgi-catalog.xml
 usage/camp/src/test/resources/playing.yaml
@@ -7863,6 +7913,10 @@ usage/dist/src/main/license/DISCLAIMER
 usage/dist/src/main/license/files/DISCLAIMER
 usage/jsgui/src/main/license/LICENSE
 usage/jsgui/src/main/license/files/LICENSE
+usage/jsgui/src/test/java/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncher.java
+usage/jsgui/src/test/java/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncherTest.java
+usage/jsgui/src/test/java/org/apache/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncher.java
+usage/jsgui/src/test/java/org/apache/brooklyn/rest/jsgui/BrooklynJavascriptGuiLauncherTest.java
 usage/jsgui/src/test/license/NOTICE
 usage/launcher
 usage/launcher/.gitignore
@@ -8539,6 +8593,8 @@ usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/AbstractTe
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/BaseTest.java
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/InfrastructureDeploymentTestCase.java
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/InfrastructureDeploymentTestCaseImpl.java
+usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/LoopOverGroupMembersTestCase.java
+usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/LoopOverGroupMembersTestCaseImpl.java
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/ParallelTestCase.java
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/ParallelTestCaseImpl.java
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/SimpleCommand.java
@@ -8553,6 +8609,8 @@ usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/SimpleShel
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/SimpleShellCommandLifecycleEffectorTasks.java
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/SimpleShellCommandTest.java
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/SimpleShellCommandTestImpl.java
+usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/TargetableTestComponent.java
+usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/TargetableTestComponentImpl.java
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/TestCase.java
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/TestCaseImpl.java
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/TestEffector.java
@@ -8562,6 +8620,8 @@ usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/TestHttpCa
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/TestHttpCallImpl.java
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/TestSensor.java
 usage/test-framework/src/main/java/org/apache/brooklyn/test/framework/TestSensorImpl.java
+usage/test-framework/src/test/java/org/apache/brooklyn/test/framework/InfrastructureDeploymentTestCaseTest.java
+usage/test-framework/src/test/java/org/apache/brooklyn/test/framework/LoopOverGroupMembersTestCaseTest.java
 usage/test-framework/src/test/java/org/apache/brooklyn/test/framework/SimpleCommandImplIntegrationTest.java
 usage/test-framework/src/test/java/org/apache/brooklyn/test/framework/SimpleCommandImplTest.java
 usage/test-framework/src/test/java/org/apache/brooklyn/test/framework/SimpleCommandIntegrationTest.java
@@ -8575,6 +8635,8 @@ usage/test-framework/src/test/java/org/apache/brooklyn/test/framework/TestHttpCa
 usage/test-framework/src/test/java/org/apache/brooklyn/test/framework/TestSensorTest.java
 usage/test-framework/src/test/java/org/apache/brooklyn/test/framework/entity/TestEntity.java
 usage/test-framework/src/test/java/org/apache/brooklyn/test/framework/entity/TestEntityImpl.java
+usage/test-framework/src/test/java/org/apache/brooklyn/test/framework/entity/TestInfrastructure.java
+usage/test-framework/src/test/java/org/apache/brooklyn/test/framework/entity/TestInfrastructureImpl.java
 usage/test-framework/src/test/resources/brooklyn/logback-appender-stdout.xml
 usage/test-framework/src/test/resources/test-framework-examples/README.md
 usage/test-framework/src/test/resources/test-framework-examples/example-catalog-test.bom
@@ -8871,6 +8933,7 @@ utils/common/src/main/java/org/apache/brooklyn/util/text/StringFunctions.java
 utils/common/src/main/java/org/apache/brooklyn/util/text/StringPredicates.java
 utils/common/src/main/java/org/apache/brooklyn/util/text/StringShortener.java
 utils/common/src/main/java/org/apache/brooklyn/util/text/Strings.java
+utils/common/src/main/java/org/apache/brooklyn/util/text/VersionComparator.java
 utils/common/src/main/java/org/apache/brooklyn/util/text/WildcardGlobs.java
 utils/common/src/main/java/org/apache/brooklyn/util/time/CountdownTimer.java
 utils/common/src/main/java/org/apache/brooklyn/util/time/Duration.java
@@ -8993,6 +9056,7 @@ utils/common/src/test/java/org/apache/brooklyn/util/text/StringFunctionsTest.jav
 utils/common/src/test/java/org/apache/brooklyn/util/text/StringPredicatesTest.java
 utils/common/src/test/java/org/apache/brooklyn/util/text/StringShortenerTest.java
 utils/common/src/test/java/org/apache/brooklyn/util/text/StringsTest.java
+utils/common/src/test/java/org/apache/brooklyn/util/text/VersionComparatorTest.java
 utils/common/src/test/java/org/apache/brooklyn/util/text/WildcardGlobsTest.java
 utils/common/src/test/java/org/apache/brooklyn/util/time/CountdownTimerTest.java
 utils/common/src/test/java/org/apache/brooklyn/util/time/DurationTest.java

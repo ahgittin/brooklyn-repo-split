@@ -143,6 +143,9 @@ brooklyn-docs/guide/ops/catalog/images/add-to-catalog.png
 brooklyn-docs/guide/ops/catalog/index.md
 brooklyn-docs/guide/ops/catalog/mysql-in-catalog-w700.png
 brooklyn-docs/guide/ops/catalog/mysql-in-catalog.png
+brooklyn-docs/guide/ops/cli/cli-ref-guide.md
+brooklyn-docs/guide/ops/cli/cli-usage-guide.md
+brooklyn-docs/guide/ops/cli/index.md
 brooklyn-docs/guide/ops/externalized-configuration.md
 brooklyn-docs/guide/ops/gui/_my-web-cluster.yaml
 brooklyn-docs/guide/ops/gui/_my-web-cluster2.yaml
@@ -264,6 +267,8 @@ brooklyn-docs/guide/yaml/example_yaml/brooklyn-elk-catalog.bom
 brooklyn-docs/guide/yaml/example_yaml/brooklyn-kibana-catalog.bom
 brooklyn-docs/guide/yaml/example_yaml/brooklyn-logstash-catalog.bom
 brooklyn-docs/guide/yaml/example_yaml/cluster-vm.yaml
+brooklyn-docs/guide/yaml/example_yaml/entities/infrastructuredeploymenttestcase-entity.yaml
+brooklyn-docs/guide/yaml/example_yaml/entities/loopovergroupmembers-entity.yaml
 brooklyn-docs/guide/yaml/example_yaml/simple-appserver-with-location-byon.yaml
 brooklyn-docs/guide/yaml/example_yaml/simple-appserver-with-location.yaml
 brooklyn-docs/guide/yaml/example_yaml/simple-appserver.yaml
@@ -276,6 +281,8 @@ brooklyn-docs/guide/yaml/example_yaml/vanilla-bash-netcat.yaml
 brooklyn-docs/guide/yaml/index.md
 brooklyn-docs/guide/yaml/multiple-services.md
 brooklyn-docs/guide/yaml/setting-locations.md
+brooklyn-docs/guide/yaml/test/example_yaml/entities/infrastructuredeploymenttestcase-entity.yaml
+brooklyn-docs/guide/yaml/test/example_yaml/entities/loopovergroupmembers-entity.yaml
 brooklyn-docs/guide/yaml/test/example_yaml/entities/paralleltestcase-entity.yaml
 brooklyn-docs/guide/yaml/test/example_yaml/entities/script1.sh
 brooklyn-docs/guide/yaml/test/example_yaml/entities/simpleshellcommandtest-entity.yaml
@@ -768,6 +775,9 @@ docs/guide/ops/catalog/mysql-in-catalog-w700.png
 docs/guide/ops/catalog/mysql-in-catalog.png
 docs/guide/ops/cli-reference.md
 docs/guide/ops/cli.md
+docs/guide/ops/cli/cli-ref-guide.md
+docs/guide/ops/cli/cli-usage-guide.md
+docs/guide/ops/cli/index.md
 docs/guide/ops/externalized-configuration.md
 docs/guide/ops/gui/_my-web-cluster.yaml
 docs/guide/ops/gui/_my-web-cluster2.yaml
@@ -852,6 +862,7 @@ docs/guide/ops/webconsole/webconsole-detail-w400.png
 docs/guide/ops/webconsole/webconsole-detail.png
 docs/guide/start/_my-web-cluster.yaml
 docs/guide/start/_my-web-cluster2.yaml
+docs/guide/start/blueprints-cli.md
 docs/guide/start/blueprints.md
 docs/guide/start/brooklyn.properties
 docs/guide/start/catalog.md
@@ -886,10 +897,13 @@ docs/guide/start/images/my-web-summary.png
 docs/guide/start/images/my-web-validating-app-endpoint-large.png
 docs/guide/start/images/my-web-validating-app-endpoint.png
 docs/guide/start/images/my-web.png
+docs/guide/start/index-cli.md
 docs/guide/start/index.include.md
 docs/guide/start/index.md
 docs/guide/start/known-issues.md
+docs/guide/start/managing-cli.md
 docs/guide/start/managing.md
+docs/guide/start/policies-cli.md
 docs/guide/start/policies.md
 docs/guide/start/quickstart/brooklyn.properties
 docs/guide/start/quickstart/catalog.xml
@@ -1115,6 +1129,8 @@ docs/guide/yaml/p2.md
 docs/guide/yaml/p2p1.md
 docs/guide/yaml/p2p1p1.md
 docs/guide/yaml/setting-locations.md
+docs/guide/yaml/test/example_yaml/entities/infrastructuredeploymenttestcase-entity.yaml
+docs/guide/yaml/test/example_yaml/entities/loopovergroupmembers-entity.yaml
 docs/guide/yaml/test/example_yaml/entities/paralleltestcase-entity.yaml
 docs/guide/yaml/test/example_yaml/entities/script1.sh
 docs/guide/yaml/test/example_yaml/entities/simpleshellcommandtest-entity.yaml
