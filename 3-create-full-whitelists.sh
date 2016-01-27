@@ -15,7 +15,11 @@ done
 
 pushd incubator-brooklyn
 
-git log --pretty=format: --name-only --diff-filter=A | sort -u > ../all-files-ever.gen.txt 
+git log --pretty=format: --name-only --diff-filter=A > ../TMP-all-files-ever.gen.txt
+# the above leaves out files added during merge commits, so also do the following
+git log --pretty=format:%H --merges | xargs git show --pretty=format: --name-only --diff-filter=A >> ../TMP-all-files-ever.gen.txt
+sort -u ../TMP-all-files-ever.gen.txt > ../all-files-ever.gen.txt 
+rm ../TMP-all-files-ever.gen.txt
 
 popd
 
