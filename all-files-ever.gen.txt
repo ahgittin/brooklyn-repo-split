@@ -114,6 +114,7 @@ api/src/main/java/brooklyn/location/LocationNotAvailableException.java
 api/src/main/java/brooklyn/location/LocationRegistry.java
 api/src/main/java/brooklyn/location/LocationResolver.java
 api/src/main/java/brooklyn/location/LocationSpec.java
+api/src/main/java/brooklyn/location/LocationType.java
 api/src/main/java/brooklyn/location/MachineDetails.java
 api/src/main/java/brooklyn/location/MachineLocation.java
 api/src/main/java/brooklyn/location/MachineLocationCustomizer.java
@@ -1478,6 +1479,12 @@ brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/e
 brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/elasticsearch/ElasticSearchNodeDriver.java
 brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/elasticsearch/ElasticSearchNodeImpl.java
 brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/elasticsearch/ElasticSearchNodeSshDriver.java
+brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastCluster.java
+brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastClusterImpl.java
+brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastNode.java
+brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastNodeDriver.java
+brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastNodeImpl.java
+brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastNodeSshDriver.java
 brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/mongodb/AbstractMongoDBServer.java
 brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/mongodb/AbstractMongoDBSshDriver.java
 brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/mongodb/MongoDBAuthenticationMixins.java
@@ -1544,6 +1551,7 @@ brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/no
 brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/nosql/couchbase/pillowfight.yaml
 brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/nosql/couchdb/couch.ini
 brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/nosql/couchdb/couch.uri
+brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/nosql/hazelcast/hazelcast-brooklyn.xml
 brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/nosql/mongodb/default-mongod.conf
 brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/nosql/mongodb/default.conf
 brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/nosql/mongodb/mongodb_win.yaml
@@ -1588,6 +1596,11 @@ brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/c
 brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/couchdb/JcouchdbSupport.java
 brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/elasticsearch/ElasticSearchClusterIntegrationTest.java
 brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/elasticsearch/ElasticSearchNodeIntegrationTest.java
+brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastClusterEc2LiveTest.java
+brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastClusterNodeIntegrationTest.java
+brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastClusterSoftlayerLiveTest.java
+brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastNodeIntegrationTest.java
+brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastTestHelper.java
 brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/mongodb/MongoDBEc2LiveTest.java
 brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/mongodb/MongoDBIntegrationTest.java
 brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/mongodb/MongoDBRebindIntegrationTest.java
@@ -2768,6 +2781,7 @@ brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/DynamicEntity
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/EntitiesTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/EntityAssertsTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/EntityAutomanagedTest.java
+brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/EntityConcurrencyTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/EntityConfigTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/EntityFunctionsTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/EntityLocationsTest.java
@@ -2958,6 +2972,7 @@ brooklyn-server/core/src/test/java/org/apache/brooklyn/core/test/qa/performance/
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/test/qa/performance/JavaYardStickPerformanceTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/test/qa/performance/SubscriptionPerformanceTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/test/qa/performance/TaskPerformanceTest.java
+brooklyn-server/core/src/test/java/org/apache/brooklyn/core/typereg/BasicBrooklynTypeRegistryTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/typereg/ExampleXmlTypePlanTransformer.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/typereg/ExampleXmlTypePlanTransformerTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/typereg/JavaClassNameTypePlanTransformerTest.java
@@ -3269,6 +3284,12 @@ brooklyn-server/locations/jclouds/src/test/java/org/apache/brooklyn/location/jcl
 brooklyn-server/locations/jclouds/src/test/java/org/apache/brooklyn/policy/jclouds/os/CreateUserPolicyLiveTest.java
 brooklyn-server/locations/jclouds/src/test/java/org/apache/brooklyn/policy/jclouds/os/CreateUserPolicyTest.java
 brooklyn-server/locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/jclouds-location-test-various-login-credentials.yaml
+brooklyn-server/locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-aws-machine-aKEcbxKN
+brooklyn-server/locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-aws-parent-lCYB3mTb
+brooklyn-server/locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-aws-winrm-machine-KYSryzW8
+brooklyn-server/locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-aws-winrm-parent-fKc0Ofyn
+brooklyn-server/locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-azure-machine-VNapYjwp
+brooklyn-server/locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-azure-parent-briByOel
 brooklyn-server/logging/logback-includes/pom.xml
 brooklyn-server/logging/logback-includes/src/main/java/org/apache/brooklyn/util/logback/JcloudsPersistenceThreadDiscriminator.java
 brooklyn-server/logging/logback-includes/src/main/resources/brooklyn/logback-appender-file.xml
@@ -5182,12 +5203,14 @@ core/src/main/java/brooklyn/location/basic/LocalhostResolver.java
 core/src/main/java/brooklyn/location/basic/LocationConfigKeys.java
 core/src/main/java/brooklyn/location/basic/LocationConfigUtils.java
 core/src/main/java/brooklyn/location/basic/LocationCreationUtils.java
+core/src/main/java/brooklyn/location/basic/LocationDynamicType.java
 core/src/main/java/brooklyn/location/basic/LocationEvent.java
 core/src/main/java/brooklyn/location/basic/LocationFunctions.java
 core/src/main/java/brooklyn/location/basic/LocationInternal.java
 core/src/main/java/brooklyn/location/basic/LocationPredicates.java
 core/src/main/java/brooklyn/location/basic/LocationPropertiesFromBrooklynProperties.java
 core/src/main/java/brooklyn/location/basic/LocationRegistry.java
+core/src/main/java/brooklyn/location/basic/LocationTypeSnapshot.java
 core/src/main/java/brooklyn/location/basic/LocationUsage.java
 core/src/main/java/brooklyn/location/basic/Locations.java
 core/src/main/java/brooklyn/location/basic/Machines.java
@@ -5448,6 +5471,7 @@ core/src/main/java/brooklyn/util/internal/ssh/BackoffLimitedRetryHandler.java
 core/src/main/java/brooklyn/util/internal/ssh/ShellAbstractTool.java
 core/src/main/java/brooklyn/util/internal/ssh/ShellTool.java
 core/src/main/java/brooklyn/util/internal/ssh/ShellToolConfigKeysForRemote.java
+core/src/main/java/brooklyn/util/internal/ssh/SshAbstractTool.java
 core/src/main/java/brooklyn/util/internal/ssh/SshException.java
 core/src/main/java/brooklyn/util/internal/ssh/SshTool.java
 core/src/main/java/brooklyn/util/internal/ssh/SshjClientConnection.java
@@ -8075,6 +8099,7 @@ docs/guide/java/common-usage.md
 docs/guide/java/defining-and-deploying.md
 docs/guide/java/entities.md
 docs/guide/java/entities/index.md
+docs/guide/java/entitlements.md
 docs/guide/java/entity.md
 docs/guide/java/index.md
 docs/guide/java/policies.md
