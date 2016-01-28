@@ -13,7 +13,7 @@ set -e
 # now restructure *in the old repo*
 
 # use the "reorg" branch when we clean history
-( cd incubator-brooklyn && git pull && git branch -D reorg && git checkout -b reorg )
+( cd incubator-brooklyn && git pull && ( git branch -D reorg || true) && git checkout -b reorg )
 # REARRANGE has been done, but if we needed to do it again we could again use this command, which will re-create the above reorg branch
 # ./1-rearrange-incubator.sh
 
