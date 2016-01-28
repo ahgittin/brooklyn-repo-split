@@ -1387,6 +1387,7 @@ brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/DynamicEntity
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/EntitiesTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/EntityAssertsTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/EntityAutomanagedTest.java
+brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/EntityConcurrencyTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/EntityConfigTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/EntityFunctionsTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/entity/EntityLocationsTest.java
@@ -1577,6 +1578,7 @@ brooklyn-server/core/src/test/java/org/apache/brooklyn/core/test/qa/performance/
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/test/qa/performance/JavaYardStickPerformanceTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/test/qa/performance/SubscriptionPerformanceTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/test/qa/performance/TaskPerformanceTest.java
+brooklyn-server/core/src/test/java/org/apache/brooklyn/core/typereg/BasicBrooklynTypeRegistryTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/typereg/ExampleXmlTypePlanTransformer.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/typereg/ExampleXmlTypePlanTransformerTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/typereg/JavaClassNameTypePlanTransformerTest.java
@@ -1888,6 +1890,12 @@ brooklyn-server/locations/jclouds/src/test/java/org/apache/brooklyn/location/jcl
 brooklyn-server/locations/jclouds/src/test/java/org/apache/brooklyn/policy/jclouds/os/CreateUserPolicyLiveTest.java
 brooklyn-server/locations/jclouds/src/test/java/org/apache/brooklyn/policy/jclouds/os/CreateUserPolicyTest.java
 brooklyn-server/locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/jclouds-location-test-various-login-credentials.yaml
+brooklyn-server/locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-aws-machine-aKEcbxKN
+brooklyn-server/locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-aws-parent-lCYB3mTb
+brooklyn-server/locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-aws-winrm-machine-KYSryzW8
+brooklyn-server/locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-aws-winrm-parent-fKc0Ofyn
+brooklyn-server/locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-azure-machine-VNapYjwp
+brooklyn-server/locations/jclouds/src/test/resources/org/apache/brooklyn/location/jclouds/persisted-azure-parent-briByOel
 brooklyn-server/logging/logback-includes/pom.xml
 brooklyn-server/logging/logback-includes/src/main/java/org/apache/brooklyn/util/logback/JcloudsPersistenceThreadDiscriminator.java
 brooklyn-server/logging/logback-includes/src/main/resources/brooklyn/logback-appender-file.xml

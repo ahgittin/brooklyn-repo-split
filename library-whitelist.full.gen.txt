@@ -494,6 +494,12 @@ brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/e
 brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/elasticsearch/ElasticSearchNodeDriver.java
 brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/elasticsearch/ElasticSearchNodeImpl.java
 brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/elasticsearch/ElasticSearchNodeSshDriver.java
+brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastCluster.java
+brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastClusterImpl.java
+brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastNode.java
+brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastNodeDriver.java
+brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastNodeImpl.java
+brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastNodeSshDriver.java
 brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/mongodb/AbstractMongoDBServer.java
 brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/mongodb/AbstractMongoDBSshDriver.java
 brooklyn-library/software/nosql/src/main/java/org/apache/brooklyn/entity/nosql/mongodb/MongoDBAuthenticationMixins.java
@@ -560,6 +566,7 @@ brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/no
 brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/nosql/couchbase/pillowfight.yaml
 brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/nosql/couchdb/couch.ini
 brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/nosql/couchdb/couch.uri
+brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/nosql/hazelcast/hazelcast-brooklyn.xml
 brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/nosql/mongodb/default-mongod.conf
 brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/nosql/mongodb/default.conf
 brooklyn-library/software/nosql/src/main/resources/org/apache/brooklyn/entity/nosql/mongodb/mongodb_win.yaml
@@ -604,6 +611,11 @@ brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/c
 brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/couchdb/JcouchdbSupport.java
 brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/elasticsearch/ElasticSearchClusterIntegrationTest.java
 brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/elasticsearch/ElasticSearchNodeIntegrationTest.java
+brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastClusterEc2LiveTest.java
+brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastClusterNodeIntegrationTest.java
+brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastClusterSoftlayerLiveTest.java
+brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastNodeIntegrationTest.java
+brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/hazelcast/HazelcastTestHelper.java
 brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/mongodb/MongoDBEc2LiveTest.java
 brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/mongodb/MongoDBIntegrationTest.java
 brooklyn-library/software/nosql/src/test/java/org/apache/brooklyn/entity/nosql/mongodb/MongoDBRebindIntegrationTest.java
@@ -4136,7 +4148,6 @@ usage/jsgui/src/main/webapp/assets/mobile/libs/mcasimir-mobile-angular-ui-be3901
 usage/jsgui/src/main/webapp/assets/mobile/libs/mcasimir-mobile-angular-ui-be39011/dist/js/mobile-angular-ui.js
 usage/jsgui/src/main/webapp/assets/mobile/libs/mcasimir-mobile-angular-ui-be39011/dist/js/mobile-angular-ui.min.js
 usage/jsgui/src/main/webapp/index.m.html
-usage/launcher/src/test/resources/couchbase.yaml
 usage/launcher/src/test/resources/pillowfight.yaml
 usage/launcher/src/test/resources/visitors-creation-script.sql
 usage/qa/log-exclusions.txt
