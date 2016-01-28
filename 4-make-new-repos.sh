@@ -12,7 +12,7 @@ function new_repo() {
     repodir=new-repos/${REPO_PREFIX}$1
     git clone incubator-brooklyn $repodir
     # for quick tests:
-#    git clone --depth 10 file://`pwd`/incubator-brooklyn $repodir && ( cd $repodir && git fetch --depth 10 )
+#    git clone --depth 10 --no-single-branch file://`pwd`/incubator-brooklyn $repodir && ( cd $repodir && git fetch --depth 10 )
     ( cd $repodir &&
         for branch in ${branches}; do git branch --track ${branch} origin/${branch}; done &&
         git remote rm origin &&

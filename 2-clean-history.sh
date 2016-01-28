@@ -16,7 +16,7 @@ git checkout master
 # now make master reorganised, if reorg branch exists
 git reset --hard reorg
 
-git filter-branch -f --index-filter "git rm -r -q --cached --ignore-unmatch $(echo $( cat ${basedir}/big-files-to-remove.txt ))" master
+git filter-branch -f --index-filter "git rm -r -q --cached --ignore-unmatch $(echo $( cat ${basedir}/big-files-to-remove.txt ))" master ${branches}
 ## above is slightly faster than below, because (compared w step 3) we have fewer patterns and (compared w step 4) we are benefitting from rm's native pattern matching
 # git filter-branch -f --index-filter \
 #  "git ls-files > /tmp/TMP-clean-history-LS ; ${basedir}/grep-lines-starting.sh ${basedir}/big-files-to-remove.txt /tmp/TMP-clean-history-LS | git update-index --force-remove --stdin" \
