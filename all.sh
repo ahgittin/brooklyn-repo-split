@@ -11,7 +11,7 @@ set -e
 ( cd incubator-brooklyn && git checkout master && git reset --hard origin/master )
 # use the "reorg" branch for cleaned history, but first update everything from origin
 ( cd incubator-brooklyn && git pull && ( git branch -D reorg || true) && 
-  ( for x in $(git branch | cut -c 3-) ; do git checkout $x ; git reset --hard origin/$x ; done ) &&
+  ( for x in $(git branch | cut -c 3-) ; do git checkout $x ; git reset --hard origin/$x || echo skipping branch $x not on origin ; done ) &&
   git checkout master && git checkout -b reorg )
 
 
