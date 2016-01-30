@@ -95,6 +95,16 @@ brooklyn-dist/scripts/buildAndTest
 brooklyn-dist/scripts/grep-in-poms.sh
 brooklyn-dist/scripts/release-branch-from-master
 brooklyn-dist/scripts/release-make
+brooklyn-dist/vagrant/pom.xml
+brooklyn-dist/vagrant/src/main/config/build-distribution.xml
+brooklyn-dist/vagrant/src/main/vagrant/README.md
+brooklyn-dist/vagrant/src/main/vagrant/Vagrantfile
+brooklyn-dist/vagrant/src/main/vagrant/files/brooklyn.properties
+brooklyn-dist/vagrant/src/main/vagrant/files/brooklyn.service
+brooklyn-dist/vagrant/src/main/vagrant/files/install_brooklyn.sh
+brooklyn-dist/vagrant/src/main/vagrant/files/logback.xml
+brooklyn-dist/vagrant/src/main/vagrant/files/vagrant-catalog.bom
+brooklyn-dist/vagrant/src/main/vagrant/servers.yaml
 buildAndRun
 buildAndTest
 release

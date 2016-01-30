@@ -689,6 +689,7 @@ brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brookl
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/catalog/SpecParameterUnwrappingTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/catalog/TestBasicApp.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/catalog/TestBasicAppImpl.java
+brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/policy/CreatePasswordSensorIntegrationTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/spi/creation/service/ServiceTypeResolverTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/spi/creation/service/TestServiceTypeResolver.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/spi/dsl/DslParseTest.java
@@ -696,6 +697,7 @@ brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brookl
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/test/lite/CampYamlLiteTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/test/lite/TestAppAssembly.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/test/lite/TestAppAssemblyInstantiator.java
+brooklyn-server/camp/camp-brooklyn/src/test/resources/EmptySoftwareProcessWithPassword.yaml
 brooklyn-server/camp/camp-brooklyn/src/test/resources/META-INF/services/org.apache.brooklyn.camp.brooklyn.spi.creation.service.ServiceTypeResolver
 brooklyn-server/camp/camp-brooklyn/src/test/resources/example-with-function.yaml
 brooklyn-server/camp/camp-brooklyn/src/test/resources/java-web-app-and-db-with-function-2.yaml
@@ -1149,6 +1151,7 @@ brooklyn-server/core/src/main/java/org/apache/brooklyn/core/sensor/Sensors.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/sensor/StaticSensor.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/sensor/TemplatedStringAttributeSensorAndConfigKey.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/sensor/http/HttpRequestSensor.java
+brooklyn-server/core/src/main/java/org/apache/brooklyn/core/sensor/password/CreatePasswordSensor.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/sensor/ssh/SshCommandSensor.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/server/BrooklynServerConfig.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/server/BrooklynServerPaths.java
@@ -1559,6 +1562,7 @@ brooklyn-server/core/src/test/java/org/apache/brooklyn/core/relations/RelationsE
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/relations/RelationshipTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/sensor/StaticSensorTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/sensor/http/HttpRequestSensorTest.java
+brooklyn-server/core/src/test/java/org/apache/brooklyn/core/sensor/password/CreatePasswordSensorTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/sensor/ssh/SshCommandSensorIntegrationTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/server/entity/BrooklynMetricsTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/test/BrooklynAppLiveTestSupport.java

@@ -526,6 +526,16 @@ brooklyn-dist/scripts/buildAndTest
 brooklyn-dist/scripts/grep-in-poms.sh
 brooklyn-dist/scripts/release-branch-from-master
 brooklyn-dist/scripts/release-make
+brooklyn-dist/vagrant/pom.xml
+brooklyn-dist/vagrant/src/main/config/build-distribution.xml
+brooklyn-dist/vagrant/src/main/vagrant/README.md
+brooklyn-dist/vagrant/src/main/vagrant/Vagrantfile
+brooklyn-dist/vagrant/src/main/vagrant/files/brooklyn.properties
+brooklyn-dist/vagrant/src/main/vagrant/files/brooklyn.service
+brooklyn-dist/vagrant/src/main/vagrant/files/install_brooklyn.sh
+brooklyn-dist/vagrant/src/main/vagrant/files/logback.xml
+brooklyn-dist/vagrant/src/main/vagrant/files/vagrant-catalog.bom
+brooklyn-dist/vagrant/src/main/vagrant/servers.yaml
 brooklyn-docs/.gitattributes
 brooklyn-docs/.gitignore
 brooklyn-docs/Gemfile
@@ -603,6 +613,7 @@ brooklyn-docs/_layouts/base.html
 brooklyn-docs/_layouts/website-base.html
 brooklyn-docs/_layouts/website-landing.html
 brooklyn-docs/_layouts/website-normal.html
+brooklyn-docs/_licensing/README
 brooklyn-docs/_plugins/brooklyn_jekyll_util.rb
 brooklyn-docs/_plugins/brooklyn_metadata.rb
 brooklyn-docs/_plugins/dependency_url.rb
@@ -635,6 +646,7 @@ brooklyn-docs/guide/dev/index.md
 brooklyn-docs/guide/dev/tips/debugging-remote-brooklyn.md
 brooklyn-docs/guide/dev/tips/index.md
 brooklyn-docs/guide/dev/tips/logging.md
+brooklyn-docs/guide/glossary.json
 brooklyn-docs/guide/index.md
 brooklyn-docs/guide/java/archetype.md
 brooklyn-docs/guide/java/common-usage.md
@@ -796,7 +808,13 @@ brooklyn-docs/guide/yaml/example_yaml/simple-appserver-with-location.yaml
 brooklyn-docs/guide/yaml/example_yaml/simple-appserver.yaml
 brooklyn-docs/guide/yaml/example_yaml/simple-vm.yaml
 brooklyn-docs/guide/yaml/example_yaml/test-app-with-enrichers-slightly-simpler.yaml
+brooklyn-docs/guide/yaml/example_yaml/vanilla-bash-netcat-catalog.bom
+brooklyn-docs/guide/yaml/example_yaml/vanilla-bash-netcat-cluster.yaml
 brooklyn-docs/guide/yaml/example_yaml/vanilla-bash-netcat-file.yaml
+brooklyn-docs/guide/yaml/example_yaml/vanilla-bash-netcat-more-commands.yaml
+brooklyn-docs/guide/yaml/example_yaml/vanilla-bash-netcat-port-parameter.yaml
+brooklyn-docs/guide/yaml/example_yaml/vanilla-bash-netcat-port.yaml
+brooklyn-docs/guide/yaml/example_yaml/vanilla-bash-netcat-reference.yaml
 brooklyn-docs/guide/yaml/example_yaml/vanilla-bash-netcat-restarter.yaml
 brooklyn-docs/guide/yaml/example_yaml/vanilla-bash-netcat-w-client.yaml
 brooklyn-docs/guide/yaml/example_yaml/vanilla-bash-netcat.yaml
@@ -886,6 +904,7 @@ brooklyn-docs/style/deps/font-awesome-4.2.0/scss/_spinning.scss
 brooklyn-docs/style/deps/font-awesome-4.2.0/scss/_stacked.scss
 brooklyn-docs/style/deps/font-awesome-4.2.0/scss/_variables.scss
 brooklyn-docs/style/deps/font-awesome-4.2.0/scss/font-awesome.scss
+brooklyn-docs/style/deps/glossarizer.js
 brooklyn-docs/style/deps/jquery-ui/images/ui-bg_flat_0_aaaaaa_40x100.png
 brooklyn-docs/style/deps/jquery-ui/images/ui-bg_flat_75_ffffff_40x100.png
 brooklyn-docs/style/deps/jquery-ui/images/ui-bg_glass_55_fbf9ee_1x400.png
@@ -915,6 +934,8 @@ brooklyn-docs/style/deps/octicons/octicons.ttf
 brooklyn-docs/style/deps/octicons/octicons.woff
 brooklyn-docs/style/deps/octicons/sprockets-octicons.scss
 brooklyn-docs/style/deps/superfish.js
+brooklyn-docs/style/deps/tooltip.css
+brooklyn-docs/style/deps/tooltip.js
 brooklyn-docs/style/deps/underscore-min.js
 brooklyn-docs/style/deps/underscore-min.map
 brooklyn-docs/style/img/apache-brooklyn-logo-244px-wide.png
@@ -2069,6 +2090,7 @@ brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brookl
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/catalog/SpecParameterUnwrappingTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/catalog/TestBasicApp.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/catalog/TestBasicAppImpl.java
+brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/policy/CreatePasswordSensorIntegrationTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/spi/creation/service/ServiceTypeResolverTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/spi/creation/service/TestServiceTypeResolver.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/spi/dsl/DslParseTest.java
@@ -2076,6 +2098,7 @@ brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brookl
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/test/lite/CampYamlLiteTest.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/test/lite/TestAppAssembly.java
 brooklyn-server/camp/camp-brooklyn/src/test/java/org/apache/brooklyn/camp/brooklyn/test/lite/TestAppAssemblyInstantiator.java
+brooklyn-server/camp/camp-brooklyn/src/test/resources/EmptySoftwareProcessWithPassword.yaml
 brooklyn-server/camp/camp-brooklyn/src/test/resources/META-INF/services/org.apache.brooklyn.camp.brooklyn.spi.creation.service.ServiceTypeResolver
 brooklyn-server/camp/camp-brooklyn/src/test/resources/example-with-function.yaml
 brooklyn-server/camp/camp-brooklyn/src/test/resources/java-web-app-and-db-with-function-2.yaml
@@ -2529,6 +2552,7 @@ brooklyn-server/core/src/main/java/org/apache/brooklyn/core/sensor/Sensors.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/sensor/StaticSensor.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/sensor/TemplatedStringAttributeSensorAndConfigKey.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/sensor/http/HttpRequestSensor.java
+brooklyn-server/core/src/main/java/org/apache/brooklyn/core/sensor/password/CreatePasswordSensor.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/sensor/ssh/SshCommandSensor.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/server/BrooklynServerConfig.java
 brooklyn-server/core/src/main/java/org/apache/brooklyn/core/server/BrooklynServerPaths.java
@@ -2939,6 +2963,7 @@ brooklyn-server/core/src/test/java/org/apache/brooklyn/core/relations/RelationsE
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/relations/RelationshipTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/sensor/StaticSensorTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/sensor/http/HttpRequestSensorTest.java
+brooklyn-server/core/src/test/java/org/apache/brooklyn/core/sensor/password/CreatePasswordSensorTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/sensor/ssh/SshCommandSensorIntegrationTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/server/entity/BrooklynMetricsTest.java
 brooklyn-server/core/src/test/java/org/apache/brooklyn/core/test/BrooklynAppLiveTestSupport.java
