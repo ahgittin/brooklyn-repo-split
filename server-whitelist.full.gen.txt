@@ -4,6 +4,7 @@
 .idea/ant.xml
 .project
 .settings/org.eclipse.m2e.core.prefs
+ATTENTION/README.md
 COPYRIGHT.md
 DISCLAIMER
 LICENSE
