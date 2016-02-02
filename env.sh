@@ -9,6 +9,6 @@ basedir=$(pwd)
 branches="0.4.0 0.5.0 0.6.0 0.7.0-incubating 0.8.0-incubating"
 
 # change this to an empty string when finished
-REPO_PREFIX=TEMP-
-REPO_ORG=rdowner
+REPO_PREFIX=
+REPO_ORG=apache
 
